@@ -14,7 +14,10 @@ module.exports = {
       colors: {
         'cWhite': '#fffcf1',
         'cBlack': '#171717',
-        'cRed': '#DC2626'
+        'cRed': '#DC2626',
+        'cBase': '#171717',
+        'cMain': '#fffcf1',
+        'cAcc': '#DC2626'
       },
       fontFamily: {
         sans: ['Helvetica', 'Arial', 'sans-serif']

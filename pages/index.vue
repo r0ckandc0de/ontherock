@@ -9,7 +9,7 @@
           <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="z-10 flex-1 py-8 md:py-20 lg:py-32">
+      <div class="z-10 flex-1 py-7 md:py-20 lg:py-32">
         <div class="transition duration-500 px-3 ">
           <p class="text-cBlack text-lg font-bold">
             {{ topMovie[0].title }}
@@ -29,7 +29,7 @@
       </div>
     </div> 
     <!-- トップ動画ここまで -->
-    <div class="bg-cWhite py-5">
+    <div class="bg-cBase pt-7 pb-5">
       <base-heading>Latest videos</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <!-- {{ movies }} -->
@@ -43,7 +43,7 @@
         </div>
     </div>
     <!-- Featuresここから -->
-    <div class="bg-cWhite py-5">
+    <div class="bg-cBase py-5">
       <base-heading>Features</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -67,7 +67,7 @@
         </div>
     </div> -->
     <!-- Garallyここから -->
-    <div class="bg-cWhite py-5">
+    <div class="bg-cBase py-5">
       <base-heading>Garally</base-heading>
         <div class="grid grid-cols-3 gap-0.5">
           <base-tile
@@ -81,7 +81,7 @@
         </div>
     </div>
 
-    <div class="bg-cWhite py-5">
+    <div class="bg-cBase py-5">
       <base-heading>Boulder</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -94,7 +94,7 @@
         </div>
     </div>
 
-    <div class="bg-cWhite py-5">
+    <div class="bg-cBase py-5">
       <base-heading>Sport</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -107,7 +107,7 @@
         </div>
     </div>
 
-    <div class="bg-cWhite py-5">
+    <div class="bg-cBase py-5">
       <base-heading>Trad</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -120,7 +120,7 @@
         </div>
     </div>
 
-    <div class="bg-cWhite py-5">
+    <div class="bg-cBase py-5">
       <base-heading>BigWall</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 

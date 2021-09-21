@@ -2,10 +2,11 @@
   <div class="flex-shrink-0 w-40 sm:w-47 mr-3">
     <NuxtLink :to="'/movie/' + id + '/'">
         <div class="w-full">
-          <img class="max-w-full" :src="`https://i.ytimg.com/vi/${url}/${pictureNumber}.jpg`" :alt="title">
+          <!-- <img class="max-w-full" :src="`https://i.ytimg.com/vi/${url}/${pictureNumber}.jpg`" :alt="title"> -->
+          <img class="max-w-full" :src="`https://i.ytimg.com/vi/${url}/mqdefault.jpg`" :alt="title">
         </div>
       <div>
-        <h2 class="text-sm line-clamp-2">{{ title }}</h2>
+        <h2 class="text-sm text-cMain line-clamp-2">{{ title }}</h2>
       </div>
     </NuxtLink>
   </div>
@@ -27,10 +28,10 @@ export default {
       type: String,
       required: true,
     },
-    pictureNumber:{
-      type: Number,
-      default: 0,
-    }
+    // pictureNumber:{
+    //   type: Number,
+    //   default: 0,
+    // }
   }
 }
 </script>

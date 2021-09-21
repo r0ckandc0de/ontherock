@@ -1,16 +1,19 @@
 <template>
-    <header class="w-full border-b absolute md:static bg-cWhite px-2 py-2 z-50">
+    <header class="w-full md:static bg-cBase px-2 py-1 z-50">
         <div class="md:max-w-3xl mx-auto md:flex md:items-center">
           <div
-            class="w-full md:flex mx-auto px-6 md:px-0 flex justify-between items-center h-16"
+            class="w-full mx-auto px-6 md:px-0 flex justify-center md:justify-between items-center h-10"
           >
-            <NuxtLink to="/search"><i class="las la-search text-cBlack text-2xl la-flip-horizontal"></i></NuxtLink>
             <h1>
-              <NuxtLink to="/" class="text-cBlack text-lg font-bold leading-relaxed inline-block mr-4 py-2">
+              <NuxtLink to="/" class="text-cMain text-lg font-bold leading-relaxed inline-block py-2">
                 On the Rock
               </NuxtLink>
             </h1>
-            <div class="text-cBlack md:hidden">
+            <div class="hidden">
+              <NuxtLink to="/search"><i class="las la-search text-cMain text-2xl la-flip-horizontal"></i></NuxtLink>
+            </div>
+
+            <!-- <div class="text-cBlack md:hidden">
               <button class="focus:outline-none" @click="isOpen = !isOpen">
                 <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
                   <path
@@ -23,9 +26,9 @@
                   />
                 </svg>
               </button>
-            </div>
+            </div> -->
           </div>
-          <nav
+          <!-- <nav
             class="w-full md:block absolute left-0 md:static bg-cWhite md:bg-none z-20"
             :class="isOpen ? 'block' : 'hidden'"
           >
@@ -59,7 +62,7 @@
                 >
               </li>
             </ul>
-          </nav>
+          </nav> -->
         </div>
     </header>
 </template>

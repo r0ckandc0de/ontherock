@@ -1,7 +1,7 @@
 <template>
-    <footer class="bg-cWhite pb-5 pt-5">
+    <footer class="bg-cBase pb-20 pt-5">
         <p
-          class="text-center text-cBlack text-sm font-bold leading-relaxed"
+          class="text-center text-cMain text-sm font-bold leading-relaxed"
         >
           Copyright © 2021 On the Rock
         </p>

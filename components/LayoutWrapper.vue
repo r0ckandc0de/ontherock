@@ -13,7 +13,7 @@ export default {
 <style scoped>
 
 .wrapper{
-    padding-top: 80px;
+    /* padding-top: 60px; */
     @media(min-width: 768px){
         padding-top: 0;
     }

@@ -4,17 +4,17 @@
       <div class="video">
         <iframe width="100%" height="100%" :src="`https://www.youtube.com/embed/${movie.url}`" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="flex flex-col bg-cWhite p-4">
+      <div class="flex flex-col bg-cBase p-4">
         <div class="flex flex-col xl:px-10 xl:pt-2">
 
           <div class="">
             <div class="mb-1">
               <div>
-                <h1 class="mb-2 font-semibold">{{ movie.title }}</h1>
+                <h1 class="text-cMain mb-2 font-semibold">{{ movie.title }}</h1>
                 <div>
-                  <NuxtLink class="text-sm" :to="'/area/' + movie.area.id + '/'">{{ movie.area.name }}</NuxtLink>
+                  <NuxtLink class="text-cMain text-sm" :to="'/area/' + movie.area.id + '/'">{{ movie.area.name }}</NuxtLink>
                   ,
-                  <NuxtLink class="text-sm" :to="'/country/' + movie.country.id + '/'">{{ movie.country.name }}</NuxtLink>
+                  <NuxtLink class="text-cMain text-sm" :to="'/country/' + movie.country.id + '/'">{{ movie.country.name }}</NuxtLink>
                 </div>
               </div>
             </div>
@@ -24,34 +24,34 @@
           <div class="py-5 grid grid-cols-2 gap-2 border-b">
             <div class="my-4 inline-block w-full">
               <div>
-                <h2 class="font-semibold">Climber</h2>
+                <h2 class="text-cMain font-semibold">Climber</h2>
               </div>
               <div v-for="(climber, index) in movie.climber"
                   :key="index"
                 >
-                <NuxtLink class="text-sm border-b-2" :to="'/climber/' + climber.id + '/'">{{ climber.name }}</NuxtLink>
+                <NuxtLink class="text-cMain text-sm border-b-2" :to="'/climber/' + climber.id + '/'">{{ climber.name }}</NuxtLink>
               </div>
             </div>
 
             <div class="my-4 inline-block w-full">
               <div>
-                <h2 class="font-semibold">Editor</h2>
+                <h2 class="text-cMain font-semibold">Editor</h2>
               </div>
               <div v-for="(editor, index) in movie.editor"
                   :key="index"
                 >
-                <NuxtLink class="text-sm border-b-2" :to="'/editor/' + editor.id + '/'">{{ editor.name }}</NuxtLink>
+                <NuxtLink class="text-cMain text-sm border-b-2" :to="'/editor/' + editor.id + '/'">{{ editor.name }}</NuxtLink>
               </div>
             </div>
 
             <div class="my-4 inline-block w-full">
               <div>
-                <h2 class="font-semibold">Problem</h2>
+                <h2 class="text-cMain font-semibold">Problem</h2>
               </div>
               <div v-for="(problem, index) in movie.problem"
                   :key="index"
                 >
-                <NuxtLink class="text-sm border-b-2" :to="'/problem/' + problem.id + '/'">
+                <NuxtLink class="text-cMain text-sm border-b-2" :to="'/problem/' + problem.id + '/'">
                   {{ problem.name }}<span v-if="problem.hasOwnProperty('grade')">({{ problem.grade }})</span>
                 </NuxtLink>
               </div>
@@ -59,22 +59,22 @@
 
             <div class="my-4 inline-block w-full">
               <div>
-                <h2 class="font-semibold">Published</h2>
+                <h2 class="text-cMain font-semibold">Published</h2>
               </div>
               <div>
-                <NuxtLink class="text-sm border-b-2" :to="'/year/' + movie.year + '/'">{{ movie.year }}</NuxtLink>
+                <NuxtLink class="text-cMain text-sm border-b-2" :to="'/year/' + movie.year + '/'">{{ movie.year }}</NuxtLink>
               </div>
             </div>
 
             <div class="my-4 inline-block w-full">
               <div>
-                <h2 class="font-semibold">Tags</h2>
+                <h2 class="text-cMain font-semibold">Tags</h2>
               </div>
               <div>
                 <div v-for="(tag, index) in movie.tag"
                   :key="index"
                 >
-                  <NuxtLink class="text-sm border-b-2" :to="'/tag/' + tag.id + '/'">{{ tag.name }}</NuxtLink>
+                  <NuxtLink class="text-cMain text-sm border-b-2" :to="'/tag/' + tag.id + '/'">{{ tag.name }}</NuxtLink>
                 </div>
               </div>
             </div>
@@ -83,8 +83,8 @@
           <!-- リンク先 -->
         </div>
       </div>
-      <div class="bg-cWhite pl-4">
-        <h2 class="font-semibold pb-2">Related Videos</h2>
+      <div class="bg-cBase pl-4">
+        <h2 class="text-cMain font-semibold pb-2">Related Videos</h2>
         <div class="overflow-x-scroll scrollbar-hide flex">
           <base-card 
             v-for="(relatedMovie, index) in relatedMovies"

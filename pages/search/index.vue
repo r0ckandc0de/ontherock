@@ -3,7 +3,7 @@
   <layout-wrapper>
     <layout-tab />
 
-    <div class="flex flex-col bg-cWhite px-3">
+    <div class="flex flex-col bg-cBase px-3">
       <!-- 検索 -->
       <div class="pt-4 md:pt-6">
         <form
@@ -11,14 +11,14 @@
           @submit.prevent
         >
           <div class="">
-            <label for="" class="py-2 fs-small-regular">Search</label>
+            <label for="" class="text-cMain py-2 fs-small-regular">Search</label>
             <div class="flex border-b">
                 <input
                 type="search"
                 @keypress.enter="search"
                 v-model="input"
                 placeholder="Type it in"
-                class="outline-none py-4 flex-1 min-w-0 bg-cWhite"
+                class="outline-none py-4 flex-1 min-w-0 bg-cBase text-cMain"
                 >
 
             </div>
@@ -34,7 +34,7 @@
           :id="movie.id"
         />
         <div v-show="movies[0] == ''">
-          <p>sorry... No Movies</p>
+          <p class="text-cMain">sorry... No Movies</p>
         </div>
       </layout-movie-list>
       <!-- タグの一覧 -->
