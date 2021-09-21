@@ -3,7 +3,7 @@
   <layout-wrapper>
     <layout-tab />
 
-    <div class="flex flex-col bg-cBase px-3">
+    <div class="flex flex-col min-h-screen bg-cBase px-3">
       <!-- 検索 -->
       <div class="pt-4 md:pt-6">
         <form
@@ -11,7 +11,7 @@
           @submit.prevent
         >
           <div class="">
-            <label for="" class="text-cMain py-2 fs-small-regular">Search</label>
+            <h2 class="font-sans text-lg text-cMain py-2">Search</h2>
             <div class="flex border-b">
                 <input
                 type="search"
@@ -25,6 +25,7 @@
           </div>
         </form>
       </div>
+
       <layout-movie-list :bool="movies.length >= 1">
         <base-card 
           v-for="(movie, index) in movies[0]"
@@ -37,7 +38,59 @@
           <p class="text-cMain">sorry... No Movies</p>
         </div>
       </layout-movie-list>
+
       <!-- タグの一覧 -->
+      <div v-if="isTags" class="py-4">
+        <div class="flex flex-col">
+          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Type</h2>
+          <ul class="grid grid-cols-2 gap-3">
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Boulder</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Sport</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Trad</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">BigWall</NuxtLink></li>
+          </ul>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Angles</h2>
+          <ul class="grid grid-cols-2 gap-3">
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Slab</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Roof</NuxtLink></li>
+          </ul>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Boulder</h2>
+          <ul class="grid grid-cols-2 gap-3">
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Highball</NuxtLink></li>
+          </ul>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Sport</h2>
+          <ul class="grid grid-cols-2 gap-3">
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Highball</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Sport</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Trad</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">BigWall</NuxtLink></li>
+          </ul>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Trad</h2>
+          <ul class="grid grid-cols-2 gap-3">
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">R/X</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Offwidth</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Wide Boyz</NuxtLink></li>
+          </ul>
+        </div>
+        <div class="flex flex-col">
+          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">BigWall</h2>
+          <ul class="grid grid-cols-2 gap-3">
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">El Capitan</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Half Dome</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Patagonia</NuxtLink></li>
+          </ul>
+        </div>
+      </div>
+      <!-- タグここまで -->
+
       <!-- <div class="box-x-wrapper">
         <div class="mt-6">
           <div class="py-2 fs-small-regular">Boulder</div>
@@ -67,7 +120,8 @@ export default {
     return {
       input:'',
       searchable: false,
-      movies:[]
+      movies:[],
+      isTags:true
     };
   },
 
@@ -81,6 +135,7 @@ export default {
       const endPoint = 'movie'
 
       this.movies = []
+      this.isTags = false
       axios.get(`${apiUrl}/${endPoint}?q=${this.input}`, {
         headers: { 'X-API-KEY': apiKey }
         }).then(response => {

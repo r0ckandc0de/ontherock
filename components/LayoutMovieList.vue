@@ -14,7 +14,8 @@ export default {
     props:{
     className:{
         type: String,
-        default:'h-screen pt-4'
+        default:'pt-4'
+        // default:'h-screen pt-4'
     },
     bool:{
         type: Boolean,
