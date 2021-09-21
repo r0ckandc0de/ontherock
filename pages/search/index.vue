@@ -6,12 +6,13 @@
     <div class="flex flex-col min-h-screen bg-cBase px-3">
       <!-- 検索 -->
       <div class="pt-4 md:pt-6">
+        <button @click="getReset"><h2 class="font-sans text-lg text-cMain py-2">Search</h2></button>
         <form
           action="."
           @submit.prevent
         >
-          <div class="">
-            <h2 class="font-sans text-lg text-cMain py-2">Search</h2>
+          <div>
+            <!-- <h2 class="font-sans text-lg text-cMain py-2">Search</h2> -->
             <div class="flex border-b">
                 <input
                 type="search"
@@ -39,72 +40,57 @@
         </div>
       </layout-movie-list>
 
-      <!-- タグの一覧 -->
+      <!-- タグの一覧ここから -->
       <div v-if="isTags" class="py-4">
         <div class="flex flex-col">
           <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Type</h2>
           <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Boulder</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Sport</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Trad</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">BigWall</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Boulder</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Sport</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Trad</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">BigWall</NuxtLink></li>
           </ul>
         </div>
         <div class="flex flex-col">
           <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Angles</h2>
           <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Slab</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Roof</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Slab</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Roof</NuxtLink></li>
           </ul>
         </div>
         <div class="flex flex-col">
           <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Boulder</h2>
           <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Highball</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Highball</NuxtLink></li>
           </ul>
         </div>
-        <div class="flex flex-col">
+        <!-- <div class="flex flex-col">
           <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Sport</h2>
           <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Highball</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Sport</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Trad</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">BigWall</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Highball</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Sport</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Trad</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">BigWall</NuxtLink></li>
           </ul>
-        </div>
+        </div> -->
         <div class="flex flex-col">
           <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Trad</h2>
           <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">R/X</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Offwidth</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Wide Boyz</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">R/X</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Offwidth</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Wide Boyz</NuxtLink></li>
           </ul>
         </div>
         <div class="flex flex-col">
           <h2 class="font-sans text-lg text-cMain pt-8 pb-2">BigWall</h2>
           <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">El Capitan</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Half Dome</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain  border text-center"><NuxtLink to="/search">Patagonia</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">El Capitan</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Half Dome</NuxtLink></li>
+            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Patagonia</NuxtLink></li>
           </ul>
         </div>
       </div>
       <!-- タグここまで -->
-
-      <!-- <div class="box-x-wrapper">
-        <div class="mt-6">
-          <div class="py-2 fs-small-regular">Boulder</div>
-          <ul class="grid grid-cols-12 gap-4 my-4">
-            <li class="flex flex-col col-span-6">
-              <button class="transition-colors duration-100 ease-in bg-base-elevated-light hover:bg-base-push-light">
-                <div class="flex items-center w-full h-12 p-3 space-x-2 fs-base-interface-bold">
-                  <span>Tag</span>
-                </div>
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div> -->
     </div>
 
   <!-- layoutここまで -->
@@ -147,6 +133,11 @@ export default {
     getClear(){
       this.input = ''
       this.movies = []
+    },
+    getReset(){
+      this.input = ''
+      this.movies = []
+      this.isTags = true   
     }
 
   },

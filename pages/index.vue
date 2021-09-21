@@ -5,8 +5,9 @@
     <!-- トップ動画ここから -->
     <NuxtLink :to="`/movie/${topMovie[0].id}/`">
       <div class="flex relative">
+        <!-- preload="none" にするか -->
         <div class="absolute inset-0 transition duration-500 opacity-100">
-          <video preload="none" autoplay loop muted playsinline webkit-playsinline="true">
+          <video preload="metadata" autoplay loop muted playsinline webkit-playsinline="true">
             <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
           </video>
         </div>

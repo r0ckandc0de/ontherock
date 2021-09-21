@@ -10,7 +10,7 @@ export default {
     props:{
     className:{
         type: String,
-        default:'bg-cBase py-5 px-3'
+        default:'bg-cBase min-h-screen py-5 px-3'
     },
     }
 }
