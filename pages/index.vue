@@ -3,33 +3,36 @@
   <layout-wrapper>
     <layout-tab />
     <!-- トップ動画ここから -->
-    <div class="flex relative">
-      <div class="absolute inset-0 transition duration-500 opacity-100">
-        <video preload="none" autoplay loop muted playsinline webkit-playsinline="true">
-          <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="z-10 flex-1 py-7 md:py-20 lg:py-32">
-        <div class="transition duration-500 px-3 ">
-          <p class="text-cBlack text-lg font-bold">
-            {{ topMovie[0].title }}
-          </p>
-          <p class="text-cBlack text-lg font-bold">
-            {{ topMovie[0].climber[0].name }}
-          </p>
+    <NuxtLink :to="`/movie/${topMovie[0].id}/`">
+      <div class="flex relative">
+        <div class="absolute inset-0 transition duration-500 opacity-100">
+          <video preload="none" autoplay loop muted playsinline webkit-playsinline="true">
+            <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
+          </video>
         </div>
-        <div class="flex mt-6 ml-3">
-          <button class="md:hidden bg-cWhite flex items-center justify-center rounded cursor-pointer px-3 py-1">
-            <span class="text-sm">Watch Now</span>
-            <div class="w-2 h-6 ml-1">
-              <span class="text-sm">▶</span>
-            </div>
-          </button>
+        
+        <div class="z-10 flex-1 py-7 md:py-20 lg:py-32">
+          <div class="transition duration-500 px-3 ">
+            <p class="text-cBlack text-base font-bold">
+              {{ topMovie[0].title }}
+            </p>
+            <p class="text-cBlack text-base font-bold">
+              {{ topMovie[0].climber[0].name }}
+            </p>
+          </div>
+          <!-- <div class="flex mt-6 ml-3">
+            <button class="md:hidden bg-cWhite flex items-center justify-center rounded cursor-pointer px-3 py-1">
+              <span class="text-sm">Watch Now</span>
+              <div class="w-2 h-6 ml-1">
+                <span class="text-sm">▶</span>
+              </div>
+            </button>
+          </div> -->
         </div>
-      </div>
-    </div> 
+      </div> 
+    </NuxtLink>
     <!-- トップ動画ここまで -->
-    <div class="bg-cBase pt-7 pb-5">
+    <div class="bg-cBase pt-24 pb-5">
       <base-heading>Latest videos</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <!-- {{ movies }} -->
@@ -44,7 +47,7 @@
     </div>
     <!-- Featuresここから -->
     <div class="bg-cBase py-5">
-      <base-heading>Features</base-heading>
+      <base-heading>Features / {{ featuresTitle }}</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
             v-for="(feature, index) in features"
@@ -139,6 +142,11 @@
 <script>
 export default {
 
+  data() {
+    return {
+      featuresTitle:'Lucid Dreaming',
+    };
+  },
   async asyncData({ $microcms }) {
     const movies = await $microcms.get({
       endpoint: 'movie',
