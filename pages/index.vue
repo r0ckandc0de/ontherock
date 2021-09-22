@@ -64,9 +64,9 @@
         </div>
     </div> -->
     <!-- Garallyここから -->
-    <div class="bg-cMain py-5">
-      <base-heading className="font-sans text-lg text-cBase font-bold ml-3 mb-5">Garally</base-heading>
-        <div class="grid grid-cols-4 gap-0.5 bg-cMain px-0.5">
+    <div>
+      <base-heading>Garally</base-heading>
+        <div class="grid grid-cols-3 gap-0.5 px-0.5">
           <base-tile
             v-for="(gallery, index) in garallies"
             :key='index'
