@@ -2,7 +2,7 @@
   <div>
     <NuxtLink :to="'/movie/' + id + '/'">
       <div>
-        <img class="max-w-full" :src="`https://i.ytimg.com/vi/${url}/${pictureNumber}.jpg`" :alt="title">
+        <img class="max-w-full h-12 object-cover w-full" :src="`https://i.ytimg.com/vi/${url}/${pictureNumber}.jpg`" :alt="title">
       </div>
     </NuxtLink>
   </div>

@@ -4,16 +4,16 @@
     <layout-tab />
     <!-- トップ動画ここから -->
     <NuxtLink :to="`/movie/${topMovie[0].id}/`">
-      <div class="flex relative">
-        <!-- preload="none" にするか -->
-        <div class="absolute inset-0 transition duration-500 opacity-100">
-          <video preload="metadata" poster="/images/preload.png" autoplay loop muted playsinline webkit-playsinline="true">
+      <div class="relative invisible ">
+        <!-- preload="none" preload="metadata" にするか -->
+        <div class="absolute invisible inset-0 transition duration-500 opacity-100">
+          <video class="visible" preload="none" poster="/images/preload.png" autoplay loop muted playsinline webkit-playsinline="true">
             <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
           </video>
         </div>
         
         <div class="transition duration-500 z-10 flex-1 py-7 md:py-20 lg:py-32">
-          <div class="invisible absolute top-40 left-40">
+          <div class="absolute top-40 left-40">
           <!-- <div class="invisible absolute top-0 right-0 px-3"> -->
             <p class="text-cBlack visible text-xs font-bold">
               {{ topMovie[0].title }}
@@ -64,9 +64,9 @@
         </div>
     </div> -->
     <!-- Garallyここから -->
-    <div class="bg-cBase py-5">
-      <base-heading>Garally</base-heading>
-        <div class="grid grid-cols-3 gap-0.5">
+    <div class="bg-cMain py-5">
+      <base-heading className="font-sans text-lg text-cBase font-bold ml-3 mb-5">Garally</base-heading>
+        <div class="grid grid-cols-4 gap-0.5 bg-cMain px-0.5">
           <base-tile
             v-for="(gallery, index) in garallies"
             :key='index'
@@ -159,7 +159,7 @@ export default {
 
     const garallies = await $microcms.get({
       endpoint: 'movie',
-      queries: { limit: 12, filters: 'garally[equals]true' },
+      queries: { limit: 16, filters: 'garally[equals]true' },
     });
 
     const boulders = await $microcms.get({
