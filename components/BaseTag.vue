@@ -1,7 +1,7 @@
 <template>
-  <li :class="className">
-    <NuxtLink :to="url">{{ title }}</NuxtLink>
-  </li>
+  <NuxtLink :to="url">
+    <li :class="className">{{ title }}</li>
+  </NuxtLink>
 </template>
 
 <script>
