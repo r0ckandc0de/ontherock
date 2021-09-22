@@ -8,7 +8,7 @@
         <!-- preload="none" にするか -->
         <div class="absolute inset-0 transition duration-500 opacity-100">
           <video preload="none" poster="/images/preload.png" autoplay loop muted playsinline webkit-playsinline="true">
-            <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
+            <source src="~/assets/video/short_sample2_alex.mp4" type="video/mp4">
           </video>
         </div>
         
