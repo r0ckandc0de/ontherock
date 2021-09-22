@@ -43,51 +43,97 @@
       <!-- タグの一覧ここから -->
       <div v-if="isTags" class="py-4">
         <div class="flex flex-col">
-          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Type</h2>
-          <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Boulder</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Sport</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Trad</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">BigWall</NuxtLink></li>
-          </ul>
+          <h2 class="font-sans text-lg text-cMain pt-8 pb-4">Tags</h2>
+          <layout-tag-wrapper>
+            <base-tag 
+              title="Boulder"
+              url="tag/tdj53b2z-4n/"
+              className="text-cPink border-cPink leading-8 border text-center rounded-full"
+            />
+            <base-tag 
+              title="Sport"
+              url="tag/kxw_jvthdfv/"
+              className="text-cPink border-cPink leading-8 border text-center rounded-full"
+            />
+            <base-tag 
+              title="Trad"
+              url="tag/aa58o79k7/"
+              className="text-cPink border-cPink leading-8 border text-center rounded-full"
+            />
+            <base-tag 
+              title="BigWall"
+              url="tag/t2r1pghpocx/"
+              className="text-cPink border-cPink leading-8 border text-center rounded-full"
+            />
+          </layout-tag-wrapper>
         </div>
-        <div class="flex flex-col">
-          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Angles</h2>
-          <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Slab</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Roof</NuxtLink></li>
-          </ul>
+        <div class="pt-10 pb-2">
+        <!-- <div class="flex flex-col"> -->
+          <!-- <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Angles</h2> -->
+          <layout-tag-wrapper>
+            <base-tag 
+              title="Slab"
+              url="tag/vd-d9h944h/"
+              className="text-cYellow border-cYellow leading-8 border text-center rounded-full"
+            />
+            <base-tag 
+              title="Roof"
+              url="tag/vhvc2ex9adar/"
+              className="text-cYellow border-cYellow leading-8 border text-center rounded-full"
+            />
+          </layout-tag-wrapper>
         </div>
-        <div class="flex flex-col">
-          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Boulder</h2>
-          <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Highball</NuxtLink></li>
-          </ul>
+        <div class="pt-10 pb-2">
+          <layout-tag-wrapper>
+            <base-tag 
+              title="Wide Boyz"
+              url="tag/nmj89vf2lbzz/"
+              className="text-cGreen border-cGreen leading-8 border text-center rounded-full"
+            />
+          </layout-tag-wrapper>
         </div>
-        <!-- <div class="flex flex-col">
-          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Sport</h2>
-          <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Highball</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Sport</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Trad</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">BigWall</NuxtLink></li>
-          </ul>
-        </div> -->
-        <div class="flex flex-col">
-          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">Trad</h2>
-          <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">R/X</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Offwidth</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Wide Boyz</NuxtLink></li>
-          </ul>
+        <div class="pt-10 pb-2">
+          <layout-tag-wrapper>
+            <base-tag 
+              title="Highball"
+              url="tag/ryy-w9bbwn/"
+              className="text-cPurple border-cPurple leading-8 border text-center rounded-full"
+            />
+            <base-tag 
+              title="R/X"
+              url="tag/3ooaa5_85x/"
+              className="text-cPurple border-cPurple leading-8 border text-center rounded-full"
+            />
+            <base-tag 
+              title="Free Solo"
+              url="tag/t-gtv3o07i1a/"
+              className="text-cPurple border-cPurple leading-8 border text-center rounded-full"
+            />
+            <base-tag 
+              title="Offwidth"
+              url="tag/8c0cet1vmksy/"
+              className="text-cPurple border-cPurple leading-8 border text-center rounded-full"
+            />
+          </layout-tag-wrapper>
         </div>
-        <div class="flex flex-col">
-          <h2 class="font-sans text-lg text-cMain pt-8 pb-2">BigWall</h2>
-          <ul class="grid grid-cols-2 gap-3">
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">El Capitan</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Half Dome</NuxtLink></li>
-            <li class="text-cBase bg-cMain border-cMain leading-8 border text-center"><NuxtLink to="/search">Patagonia</NuxtLink></li>
-          </ul>
+        <div class="pt-10 pb-2">
+          <layout-tag-wrapper>
+            <base-tag 
+              title="El Capitan"
+              url="tag/s4e_muied/"
+              className="text-cBlue border-cBlue leading-8 border text-center rounded-full"
+            />
+            <base-tag 
+              title="Half Dome"
+              url="tag/jtd7_zyla7d/"
+              className="text-cBlue border-cBlue leading-8 border text-center rounded-full"
+            />
+            <base-tag 
+              title="Patagonia"
+              url="area/xj6xxbqim/"
+              className="text-cBlue border-cBlue leading-8 border text-center rounded-full"
+            />
+          </layout-tag-wrapper>
         </div>
       </div>
       <!-- タグここまで -->

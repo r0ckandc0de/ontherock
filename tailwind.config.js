@@ -15,12 +15,18 @@ module.exports = {
         'cWhite': '#fffcf1',
         'cBlack': '#171717',
         'cRed': '#DC2626',
+        'cPink': '#ff006f',
+        'cLemon': '#d2d200',
+        'cGreen': '#00a096',
+        'cBlue': '#00a5dd',
+        'cPurple': '#b50099',
+        'cYellow': '#ffbf1f',
         'cBase': '#171717',
         'cMain': '#fffcf1',
-        'cAcc': '#DC2626'
+        'cAcc': '#DC2626',
       },
       fontFamily: {
-        sans: ['Helvetica', 'Arial', 'sans-serif']
+        sans: ['Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
       },
     },
   },
