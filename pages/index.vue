@@ -7,33 +7,26 @@
       <div class="flex relative">
         <!-- preload="none" にするか -->
         <div class="absolute inset-0 transition duration-500 opacity-100">
-          <video preload="none" poster="/images/preload.png" autoplay loop muted playsinline webkit-playsinline="true">
-            <source src="~/assets/video/short_sample2_alex.mp4" type="video/mp4">
+          <video preload="metadata" poster="/images/preload.png" autoplay loop muted playsinline webkit-playsinline="true">
+            <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
           </video>
         </div>
         
-        <div class="z-10 flex-1 py-7 md:py-20 lg:py-32">
-          <div class="transition duration-500 px-3 ">
-            <p class="text-cBlack text-base font-bold">
+        <div class="transition duration-500 z-10 flex-1 py-7 md:py-20 lg:py-32">
+          <div class="invisible absolute top-40 left-40">
+          <!-- <div class="invisible absolute top-0 right-0 px-3"> -->
+            <p class="text-cBlack visible text-xs font-bold">
               {{ topMovie[0].title }}
             </p>
-            <p class="text-cBlack text-base font-bold">
+            <!-- <p class="text-cBlack visible text-xs font-bold">
               {{ topMovie[0].climber[0].name }}
-            </p>
+            </p> -->
           </div>
-          <!-- <div class="flex mt-6 ml-3">
-            <button class="md:hidden bg-cWhite flex items-center justify-center rounded cursor-pointer px-3 py-1">
-              <span class="text-sm">Watch Now</span>
-              <div class="w-2 h-6 ml-1">
-                <span class="text-sm">▶</span>
-              </div>
-            </button>
-          </div> -->
         </div>
       </div>
     </NuxtLink>
     <!-- トップ動画ここまで -->
-    <div class="bg-cBase pt-24 pb-5">
+    <div class="bg-cBase pt-44 pb-5">
       <base-heading>Latest videos</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <!-- {{ movies }} -->
