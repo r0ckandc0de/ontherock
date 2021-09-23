@@ -12,9 +12,8 @@
               <div>
                 <h1 class="text-cMain mb-2 font-semibold">{{ movie.title }}</h1>
                 <div>
-                  <NuxtLink class="text-cMain text-sm" :to="'/area/' + movie.area.id + '/'">{{ movie.area.name }}</NuxtLink>
-                  ,
-                  <NuxtLink class="text-cMain text-sm" :to="'/country/' + movie.country.id + '/'">{{ movie.country.name }}</NuxtLink>
+                  <NuxtLink class="text-cMain text-sm border-b" :to="'/area/' + movie.area.id + '/'">{{ movie.area.name }},</NuxtLink>
+                  <NuxtLink class="text-cMain text-sm border-b" :to="'/country/' + movie.country.id + '/'">{{ movie.country.name }}</NuxtLink>
                 </div>
               </div>
             </div>
