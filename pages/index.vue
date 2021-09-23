@@ -65,7 +65,7 @@
     </div> -->
     <!-- Garallyここから -->
     <div class="bg-cBase py-5">
-      <base-heading>Garally</base-heading>
+      <base-heading>Gallery</base-heading>
         <div class="grid grid-cols-3 gap-0.5 px-0.5">
           <base-tile
             v-for="(gallery, index) in garallies"
