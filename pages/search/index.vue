@@ -90,6 +90,11 @@
               url="tag/nmj89vf2lbzz/"
               className="text-cGreen border-cGreen leading-8 border text-center rounded-full"
             />
+            <base-tag 
+              title="Stone Monkeys"
+              url="tag/zpndasjqy/"
+              className="text-cGreen border-cGreen leading-8 border text-center rounded-full"
+            />
           </layout-tag-wrapper>
         </div>
         <div class="pt-10 pb-2">
@@ -168,7 +173,7 @@ export default {
 
       this.movies = []
       this.isTags = false
-      axios.get(`${apiUrl}/${endPoint}?q=${this.input}`, {
+      axios.get(`${apiUrl}/${endPoint}?depth=3&q=${this.input}`, {
         headers: { 'X-API-KEY': apiKey }
         }).then(response => {
           console.log('response')

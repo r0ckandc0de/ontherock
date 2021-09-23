@@ -6,7 +6,7 @@
     <NuxtLink :to="`/movie/${topMovie[0].id}/`">
       <div class="relative invisible ">
         <!-- preload="none" preload="metadata" にするか -->
-        <div class="absolute invisible inset-0 transition duration-500 opacity-100">
+        <div class="absolute inset-0 transition duration-500 opacity-100">
           <video class="visible" preload="none" poster="/images/preload.png" autoplay loop muted playsinline webkit-playsinline="true">
             <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
           </video>
@@ -27,7 +27,7 @@
     </NuxtLink>
     <!-- トップ動画ここまで -->
     <div class="bg-cBase pt-44 pb-5">
-      <base-heading>Latest videos</base-heading>
+      <base-heading>Latest Videos</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <!-- {{ movies }} -->
           <base-card 
@@ -64,7 +64,7 @@
         </div>
     </div> -->
     <!-- Garallyここから -->
-    <div>
+    <div class="bg-cBase py-5">
       <base-heading>Garally</base-heading>
         <div class="grid grid-cols-3 gap-0.5 px-0.5">
           <base-tile
@@ -194,4 +194,5 @@ export default {
     }
   }
 }
+
 </script>
