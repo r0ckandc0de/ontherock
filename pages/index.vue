@@ -7,7 +7,7 @@
       <div class="relative invisible ">
         <!-- preload="none" preload="metadata" にするか -->
         <div class="absolute video-wrapper inset-0 transition duration-500 opacity-100">
-          <video class="visible video" preload="none" poster="/images/loading.png" autoplay loop muted playsinline webkit-playsinline="true">
+          <video class="visible video" preload="none" poster="/images/preload.png" autoplay loop muted playsinline webkit-playsinline="true">
             <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
           </video>
         </div>
@@ -196,22 +196,3 @@ export default {
 }
 
 </script>
-
-<style scoped>
-
-.video-wrapper{
-  height: fit-content;
-}
-
-.video{
-  width: 100%;
-  height: 100%;
-}
-
-video[poster]{
-  object-fit: cover;
-  /* margin: 0 auto */
-}
-
-
-</style>
