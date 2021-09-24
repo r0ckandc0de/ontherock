@@ -68,7 +68,7 @@
       <base-heading>Gallery</base-heading>
         <div class="grid grid-cols-3 gap-0.5 px-0.5">
           <base-tile
-            v-for="(gallery, index) in garallies"
+            v-for="(gallery, index) in galleries"
             :key='index'
             :title="gallery.title"
             :url="gallery.url"
@@ -129,6 +129,19 @@
           />
         </div>
     </div>
+
+    <div class="bg-cBase py-5">
+      <base-heading>Womens</base-heading>
+        <div class="overflow-x-scroll scrollbar-hide flex ml-3">
+          <base-card 
+            v-for="(women, index) in womens"
+            :key='index'
+            :title="women.title"
+            :url="women.url"
+            :id="women.id"
+          />
+        </div>
+    </div>
   <!-- layoutここまで -->
   </layout-wrapper>
 </template>
@@ -157,9 +170,9 @@ export default {
       queries: { limit: 10, filters: 'feature[equals]true' },
     });
 
-    const garallies = await $microcms.get({
+    const galleries = await $microcms.get({
       endpoint: 'movie',
-      queries: { limit: 16, filters: 'garally[equals]true' },
+      queries: { limit: 15, filters: 'gallery[equals]true' },
     });
 
     const boulders = await $microcms.get({
@@ -182,15 +195,21 @@ export default {
       queries: { limit: 10, filters: `tag[contains]t2r1pghpocx`},
     });
 
+    const womens = await $microcms.get({
+      endpoint: 'movie',
+      queries: { limit: 10, filters: `tag[contains]b5wztuyhp`},
+    });
+
     return{
       movies: movies.contents,
       topMovie: topMovie.contents,
       features: features.contents,
-      garallies: garallies.contents,
+      galleries: galleries.contents,
       boulders: boulders.contents,
       sports: sports.contents,
       trads: trads.contents,
-      bigwalls: bigwalls.contents
+      bigwalls: bigwalls.contents,
+      womens: womens.contents,
     }
   }
 }
