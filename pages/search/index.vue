@@ -86,8 +86,8 @@
         <div class="pt-10 pb-2">
           <layout-tag-wrapper>
             <base-tag 
-              title="Wide Boyz"
-              url="tag/nmj89vf2lbzz/"
+              title="Stone Masters"
+              url="tag/2tgmrydm0new/"
               className="text-cGreen border-cGreen leading-8 border text-center rounded-full"
             />
             <base-tag 
@@ -95,6 +95,12 @@
               url="tag/zpndasjqy/"
               className="text-cGreen border-cGreen leading-8 border text-center rounded-full"
             />
+            <base-tag 
+              title="Wide Boyz"
+              url="tag/nmj89vf2lbzz/"
+              className="text-cGreen border-cGreen leading-8 border text-center rounded-full"
+            />
+            
           </layout-tag-wrapper>
         </div>
         <div class="pt-10 pb-2">

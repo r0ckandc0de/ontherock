@@ -40,7 +40,7 @@ module.exports = {
         'cAcc': '#DC2626',
       },
       fontFamily: {
-        sans: ['Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
+        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
       },
     },
   },
