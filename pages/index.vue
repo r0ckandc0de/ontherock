@@ -7,7 +7,7 @@
       <div class="relative invisible ">
         <!-- preload="none" preload="metadata" にするか -->
         <div class="absolute inset-0 transition duration-500 opacity-100">
-          <video class="visible video" preload="none" poster="/images/preload2.png" autoplay loop muted playsinline webkit-playsinline="true">
+          <video class="visible video" preload="none" poster="/images/topAlex.png" autoplay loop muted playsinline webkit-playsinline="true">
             <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
           </video>
         </div>
