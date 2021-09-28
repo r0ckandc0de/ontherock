@@ -4,11 +4,13 @@
           <div
             class="w-full mx-auto px-6 md:px-0 flex justify-center md:justify-between items-center h-10"
           >
-            <h1>
-              <NuxtLink to="/" class="text-cMain text-lg font-bold leading-relaxed inline-block py-2">
-                On the Rock
-              </NuxtLink>
-            </h1>
+            <div class="flex justify-center">
+              <h1>
+                <NuxtLink to="/" class="text-cMain text-lg font-bold leading-relaxed inline-block py-2">
+                    <img class="w-40 mt-5" src="/images/logo_white.svg" alt="OntheRock">
+                </NuxtLink>
+              </h1>
+            </div>
             <div class="hidden">
               <NuxtLink to="/search"><i class="las la-search text-cMain text-2xl la-flip-horizontal"></i></NuxtLink>
             </div>
