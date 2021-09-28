@@ -39,6 +39,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     'nuxt-microcms-module',
+    '@nuxtjs/pwa',
   ],
 
   microcms: {
@@ -69,4 +70,19 @@ export default {
   privateRuntimeConfig: {
     apiKey: API_KEY,
   },
+  manifest: {
+    name: "On the Rock",
+    lang: "en",
+    short_name: "On the Rock",
+    title: "On the Rock",
+    "og:title": "On the Rock",
+    description: "Climbing Movies Collection in the World",
+    "og:description": "Climbing Movies Collection in the World",
+    theme_color: "#fffcf1",
+    background_color: "#171717",
+  },
+
+  workbox: {
+    dev: false, // Service Workerを開発環境で使用するかどうか
+  }
 }
