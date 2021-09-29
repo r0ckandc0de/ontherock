@@ -6,7 +6,7 @@
     <div class="flex flex-col min-h-screen bg-cBase px-3">
       <!-- 検索 -->
       <div class="pt-4 md:pt-6">
-        <button @click="getReset"><h2 class="font-sans text-lg text-cMain py-2">Search</h2></button>
+        <button @click="getReset"><h2 class="font-sans text-lg text-cMain py-2 tracking-wider">Search</h2></button>
         <form
           action="."
           @submit.prevent
@@ -19,7 +19,7 @@
                 @keypress.enter="search"
                 v-model="input"
                 placeholder="Type it in"
-                class="outline-none py-4 flex-1 min-w-0 bg-cBase text-cMain"
+                class="outline-none py-4 flex-1 min-w-0 bg-cBase text-cMain tracking-wider"
                 >
 
             </div>
@@ -43,7 +43,7 @@
       <!-- タグの一覧ここから -->
       <div v-if="isTags" class="py-4">
         <div class="flex flex-col">
-          <h2 class="font-sans text-lg text-cMain pt-8 pb-4">Tags</h2>
+          <h2 class="font-sans text-lg text-cMain pt-8 pb-4 tracking-wider">Tags</h2>
           <layout-tag-wrapper>
             <base-tag 
               title="Boulder"

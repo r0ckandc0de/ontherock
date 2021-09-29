@@ -18,7 +18,7 @@ export default {
     },
     className:{
         type: String,
-        default:'text-cMain border-cMain leading-8 border text-center rounded-full'
+        default:'text-cMain border-cMain leading-8 border text-center rounded-full tracking-wider '
     },
   }
 }

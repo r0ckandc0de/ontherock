@@ -20,6 +20,7 @@
     :draggable="false"
     @click="onClickMarker(index, m)"
     />
+
     <GmapInfoWindow
     :options="infoOptions"
     :position="infoWindowPos"
@@ -30,10 +31,11 @@
         {{ marker.name }}
       </p> -->
       <NuxtLink :to="'/area/' + marker.id + '/'">
-        <div class="text-center">
+        <div class="text-center font-sans text-cBase">
           {{ marker.name }}
         </div>
       </NuxtLink>
+      
     </GmapInfoWindow>
     </GmapMap>
 
@@ -47,7 +49,8 @@ export default {
 
   data() {
     return {
-     maplocation: { lng: 0, lat: 0 },
+    //  maplocation: { lng: 0, lat: 0 },
+     maplocation: { lng: 37.741667, lat: -119.6025 },
       zoom: 8,
       styleMap: {
         width: '100%',
@@ -87,12 +90,9 @@ export default {
       })
     },
     onClickMarker(index, marker) {
-      // this.$refs.gmp.panTo(marker.position)
-      // this.$refs.gmp.panTo({ lat: marker.lat, lng: marker.lng })
       this.$refs.gmap.$mapPromise.then((map) => {
         map.panTo({lat: marker.lat, lng: marker.lng})
       })
-      // this.infoWindowPos = marker.position
       this.infoWindowPos = { lat: marker.lat, lng: marker.lng }
       this.marker = marker
       this.infoWinOpen = true
@@ -101,6 +101,7 @@ export default {
   async asyncData({ $microcms }) {
     const markers = await $microcms.get({
       endpoint: 'area',
+      queries: { limit: 100},
     });
 
     return{
