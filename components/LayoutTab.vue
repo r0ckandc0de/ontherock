@@ -1,5 +1,5 @@
 <template>
-    <div class="h-12 md:h-14 flex bg-cBase">
+    <div class="tab h-12 md:h-14 flex bg-cBase">
         <ul class="flex justify-around items-center tracking-wider overflow-x-scroll md:justify-center w-full h-full">
             <li class="text-cMain border-b-2 mx-4 lg:mx-6">
                 <NuxtLink :to="'/tag/' + boulderTagId + '/'">Boulder</NuxtLink>

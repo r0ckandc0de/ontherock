@@ -51,13 +51,13 @@ export default {
     maplocation: { lng: 37.741667, lat: -119.6025 },
       zoom: 8,
       styleMap: {
-        width: '100%',
+        width: '100vw',
         height: '100vh',
       },
       mapOptions: {
         streetViewControl: true,
         zoomControl: true,
-        mapTypeControl: false,
+        mapTypeControl: true,
         scaleControl: false,
         rotateControl: false,
         fullscreenControl: true,
@@ -116,3 +116,19 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+@media(min-width: 768px){
+
+  .wrapper{
+      margin: 0;
+  }
+
+  .tab {
+    width: 100vw;
+}
+
+}
+
+</style>
