@@ -2,7 +2,7 @@
 <div :class="className">
     <div
     v-show="bool"
-    class="grid grid-cols-2 gap-6">
+    class="grid grid-cols-2 md:grid-cols-4 gap-6 ">
         <slot />
     </div>
 </div>

@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-cBase pb-20 pt-5">
+    <footer class="bg-cBase pb-20 md:pb-5 pt-5 md:pt-32">
         <p
           class="text-center text-cMain text-sm font-bold leading-relaxed"
         >

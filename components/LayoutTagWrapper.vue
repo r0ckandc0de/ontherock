@@ -10,7 +10,7 @@ export default {
     props:{
     className:{
         type: String,
-        default:'grid grid-cols-2 gap-3'
+        default:'grid grid-cols-2 gap-3 md:grid-cols-6'
     },
     }
 }

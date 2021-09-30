@@ -4,11 +4,11 @@
       <div class="video">
         <iframe width="100%" height="100%" :src="`https://www.youtube.com/embed/${movie.url}`" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="flex flex-col bg-cBase p-4">
-        <div class="flex flex-col xl:px-10 xl:pt-2">
+      <div class="flex flex-col bg-cBase p-4 md:px-0">
+        <div class="flex flex-col">
 
           <div class="">
-            <div class="mb-1">
+            <div class="mb-1 md:mt-4">
               <div>
                 <h1 class="text-cMain mb-2 font-semibold">{{ movie.title }}</h1>
                 <div>
@@ -82,7 +82,7 @@
           <!-- リンク先 -->
         </div>
       </div>
-      <div class="bg-cBase pl-4">
+      <div class="bg-cBase pl-4 md:px-0">
         <h2 class="text-cMain font-semibold pb-2">Related Videos</h2>
         <div class="overflow-x-scroll scrollbar-hide flex">
           <base-card 

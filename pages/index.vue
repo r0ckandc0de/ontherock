@@ -4,7 +4,7 @@
     <layout-tab />
     <!-- トップ動画ここから -->
     <NuxtLink :to="`/movie/${topMovie[0].id}/`">
-      <div class="relative invisible ">
+      <div class="relative invisible">
         <!-- preload="none" preload="metadata" にするか -->
         <div class="absolute inset-0 transition duration-500 opacity-100">
           <video class="visible video" preload="none" poster="/images/topAlex.png" autoplay loop muted playsinline webkit-playsinline="true">
@@ -13,9 +13,9 @@
         </div>
         
         <div class="transition duration-500 z-10 flex-1 py-7 md:py-20 lg:py-32">
-          <div class="absolute top-40 left-40">
+          <div class="absolute top-40 left-40 md:top-140 md:left-128">
           <!-- <div class="invisible absolute top-0 right-0 px-3"> -->
-            <p class="text-cBlack visible text-xs font-bold">
+            <p class="text-cBlack visible text-xs md:text-xl font-bold">
               {{ topMovie[0].title }}
             </p>
             <!-- <p class="text-cBlack visible text-xs font-bold">
@@ -26,7 +26,7 @@
       </div>
     </NuxtLink>
     <!-- トップ動画ここまで -->
-    <div class="bg-cBase pt-44 pb-5">
+    <div class="bg-cBase pt-44 md:pt-96 pb-5">
       <base-heading>Latest Videos</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <!-- {{ movies }} -->
@@ -66,7 +66,7 @@
     <!-- Garallyここから -->
     <div class="bg-cBase py-5">
       <base-heading>Gallery</base-heading>
-        <div class="grid grid-cols-3 gap-0.5 px-0.5">
+        <div class="grid grid-cols-3 md:grid-cols-9 gap-0.5 px-0.5">
           <base-tile
             v-for="(gallery, index) in galleries"
             :key='index'

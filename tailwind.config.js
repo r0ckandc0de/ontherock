@@ -39,6 +39,20 @@ module.exports = {
         'cMain': '#fffcf1',
         'cAcc': '#DC2626',
       },
+      spacing: {
+        '72': '18rem',
+        '84': '21rem',
+        '96': '24rem',
+        '104': '26rem',
+        '112': '28rem',
+        '120': '30rem',
+        '128': '32rem',
+        '136': '34rem',
+        '140': '35rem',
+        '144': '36rem',
+        '152': '38rem',
+        '160': '40rem',
+      },
       fontFamily: {
         sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
       },
