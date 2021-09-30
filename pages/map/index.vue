@@ -65,7 +65,7 @@ export default {
         styles: [],
       },
       infoOptions: {
-        minWidth: 150,
+        minWidth: 100,
         pixelOffset: {
           width: 0,
           height: -35,

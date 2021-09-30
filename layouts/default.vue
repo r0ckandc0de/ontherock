@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg-cBase">
         <layout-header />
         <Nuxt />
         <layout-footer />
