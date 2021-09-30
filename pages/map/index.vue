@@ -27,12 +27,9 @@
     :opened="infoWinOpen"
     @closeclick="infoWinOpen = false"
     >
-      <!-- <p style="color: #000">
-        {{ marker.name }}
-      </p> -->
       <NuxtLink :to="'/area/' + marker.id + '/'">
-        <div class="text-center font-sans text-cBase">
-          {{ marker.name }}
+        <div class="text-center flex justify-center items-center font-sans text-cBase">
+          <div>{{ marker.name }}</div>
         </div>
       </NuxtLink>
       
@@ -45,23 +42,30 @@
 </template>
 
 <script>
+
 export default {
 
   data() {
     return {
     //  maplocation: { lng: 0, lat: 0 },
-     maplocation: { lng: 37.741667, lat: -119.6025 },
+    maplocation: { lng: 37.741667, lat: -119.6025 },
       zoom: 8,
       styleMap: {
         width: '100%',
         height: '100vh',
       },
       mapOptions: {
-        streetViewControl: false,
+        streetViewControl: true,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: false,
+        rotateControl: false,
+        fullscreenControl: true,
+        disableDefaultUi: false,
         styles: [],
       },
       infoOptions: {
-        minWidth: 200,
+        minWidth: 150,
         pixelOffset: {
           width: 0,
           height: -35,
