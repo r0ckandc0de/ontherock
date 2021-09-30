@@ -26,7 +26,7 @@
       </div>
     </NuxtLink>
     <!-- トップ動画ここまで -->
-    <div class="bg-cBase pt-44 md:pt-96 pb-5">
+    <div class="bg-cBase pt-44 md:pt-96 pb-5 md:-ml-4">
       <base-heading>Latest Videos</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <!-- {{ movies }} -->
@@ -40,7 +40,7 @@
         </div>
     </div>
     <!-- Featuresここから -->
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:-ml-4">
       <base-heading>Features / {{ featuresTitle }}</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -64,9 +64,9 @@
         </div>
     </div> -->
     <!-- Garallyここから -->
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:-ml-4">
       <base-heading>Gallery</base-heading>
-        <div class="grid grid-cols-3 md:grid-cols-9 gap-0.5 px-0.5">
+        <div class="grid grid-cols-3 md:grid-cols-9 gap-0.5 px-0.5 md:pl-3">
           <base-tile
             v-for="(gallery, index) in galleries"
             :key='index'
@@ -78,7 +78,7 @@
         </div>
     </div>
 
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:-ml-4">
       <base-heading>Boulder</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -91,7 +91,7 @@
         </div>
     </div>
 
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:-ml-4">
       <base-heading>Sport</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -104,7 +104,7 @@
         </div>
     </div>
 
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:-ml-4">
       <base-heading>Trad</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -117,7 +117,7 @@
         </div>
     </div>
 
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:-ml-4">
       <base-heading>BigWall</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:-ml-4">
       <base-heading>Womens</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -172,7 +172,7 @@ export default {
 
     const galleries = await $microcms.get({
       endpoint: 'movie',
-      queries: { limit: 15, filters: 'gallery[equals]true' },
+      queries: { limit: 18, filters: 'gallery[equals]true' },
     });
 
     const boulders = await $microcms.get({
