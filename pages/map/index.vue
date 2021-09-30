@@ -121,13 +121,13 @@ export default {
 
 @media(min-width: 768px){
 
-  .wrapper{
+  #wrapper{
       margin: 0;
   }
 
   .tab {
     width: 100vw;
-}
+  }
 
 }
 

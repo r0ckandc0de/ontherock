@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper bg-cBase">
+    <div id="wrapper" class="wrapper bg-cBase">
         <slot />
     </div>
 </template>
@@ -16,6 +16,7 @@ export default {
     @media(min-width: 768px){
         padding-top: 0;
         max-width: 1100px;
+        margin:0;
         margin: 0 auto;
     }
 }

@@ -98,15 +98,15 @@ export default {
           isOpen: false,
       }
   },
-  // computed: {
-  //   isLarge() {
-  //     if(window.matchMedia('(min-width: 1024px)').matches){
-  //       return true;
-  //       } else {
-  //         return false;
-  //         }
-  //   }
-  // }
+  computed: {
+    isLarge() {
+      if(window.matchMedia('(min-width: 1024px)').matches){
+        return true;
+        } else {
+          return false;
+          }
+    }
+  }
 }
 </script>
 
