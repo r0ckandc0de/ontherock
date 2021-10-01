@@ -30,7 +30,8 @@
               </button>
             </div> -->
           </div>
-          <div v-if="isLarge === true" class="flex">
+          <!-- <p>{{ windowSize }}</p> -->
+          <div v-if="windowSize.x  >= minWidth" class="flex">
             <NuxtLink to="/map">
               <div class="text-cMain flex flex-col py-1">
                 <div class="md:px-5 px-3 pt-1">
@@ -96,17 +97,21 @@ export default {
   data(){
       return{
           isOpen: false,
+          windowSize: {
+            x: 0,
+            y: 0
+          },
+          minWidth: 768,
       }
   },
-  // computed: {
-  //   isLarge() {
-  //     if(window.matchMedia('(min-width: 1024px)').matches){
-  //       return true;
-  //       } else {
-  //         return false;
-  //         }
-  //   }
-  // }
+  mounted () {
+    this.getWindowSize()
+  },
+  methods: {
+    getWindowSize () {
+      this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+    }
+  }
 }
 </script>
 
