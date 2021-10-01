@@ -65,7 +65,7 @@
     <!-- Garallyここから -->
     <div class="bg-cBase py-5 md:mx-1/24">
       <base-heading>Gallery</base-heading>
-        <div class="grid grid-cols-3 md:grid-cols-9 gap-0.5 px-0.5 md:px-3">
+        <div class="grid grid-cols-3 md:grid-cols-6 xl:grid-cols-9 gap-0.5 px-0.5 md:px-3">
           <base-tile
             v-for="(gallery, index) in galleries"
             :key='index'
