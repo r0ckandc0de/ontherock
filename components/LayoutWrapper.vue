@@ -1,5 +1,5 @@
 <template>
-    <div id="wrapper" class="wrapper bg-cBase">
+    <div id="wrapper" class="wrapper mx-auto p-0 md:max-w-2xl lg:max-w-4xl xl:max-w-6xl bg-cBase">
         <slot />
     </div>
 </template>
@@ -12,31 +12,5 @@ export default {
 
 <style scoped>
 
-.wrapper{
-    @media(min-width: 768px){
-        padding-top: 0;
-        max-width: 700px;
-        margin:0;
-        margin: 0 auto;
-    }
-}
-
-.wrapper{
-    @media(min-width: 1024px){
-        padding-top: 0;
-        max-width: 960px;
-        margin:0;
-        margin: 0 auto;
-    }
-}
-
-.wrapper{
-    @media(min-width: 1280px){
-        padding-top: 0;
-        max-width: 1100px;
-        margin:0;
-        margin: 0 auto;
-    }
-}
 
 </style>

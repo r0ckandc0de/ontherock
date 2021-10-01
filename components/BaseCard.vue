@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-shrink-0 w-40 md:w-58 xl:w-64 mr-3">
+  <div class="flex-shrink-0 w-40 md:w-52 xl:w-64 mr-3">
     <NuxtLink :to="'/movie/' + id + '/'">
       <div class="w-full">
         <!-- <img class="max-w-full" :src="`https://i.ytimg.com/vi/${url}/${pictureNumber}.jpg`" :alt="title"> -->
