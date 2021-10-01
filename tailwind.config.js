@@ -40,9 +40,11 @@ module.exports = {
         'cAcc': '#DC2626',
       },
       spacing: {
+        '1/24': '4.166667%',
         '72': '18rem',
         '84': '21rem',
         '96': '24rem',
+        '100': '25rem',
         '104': '26rem',
         '112': '28rem',
         '120': '30rem',
@@ -50,8 +52,12 @@ module.exports = {
         '136': '34rem',
         '140': '35rem',
         '144': '36rem',
+        '148': '37rem',
         '152': '38rem',
         '160': '40rem',
+        '176': '44rem',
+        '180': '45rem',
+        '192': '48rem',
       },
       fontFamily: {
         sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']

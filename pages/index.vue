@@ -1,32 +1,31 @@
 <template>
   <!-- layoutここから -->
-  <layout-wrapper>
+  <layout-top-wrapper>
     <layout-tab />
     <!-- トップ動画ここから -->
     <NuxtLink :to="`/movie/${topMovie[0].id}/`">
-      <div class="relative invisible">
+      <!-- <div class="relative invisible"> -->
         <!-- preload="none" preload="metadata" にするか -->
-        <div class="absolute inset-0 transition duration-500 opacity-100 md:mx-4">
-          <video class="visible video" preload="none" poster="/images/topAlex.png" autoplay loop muted playsinline webkit-playsinline="true">
+        <div class="relartive inset-0 transition duration-500 opacity-100 md:w-full">
+          <video class="visible video md:w-screen md:h-160 md:object-cover" preload="none" poster="/images/topAlex.png" autoplay loop muted playsinline webkit-playsinline="true">
             <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
           </video>
         </div>
         
-        <div class="transition duration-500 z-10 flex-1 py-7 md:py-20 lg:py-32">
-          <div class="absolute top-40 left-40 md:top-140 md:left-128">
-          <!-- <div class="invisible absolute top-0 right-0 px-3"> -->
+        <!-- <div class="transition duration-500 z-10 flex-1 py-7 md:py-20 lg:py-32">
+          <div class="absolute top-64 left-40 md:top-140 md:left-100 lg:top-148 lg:left-112 xl:hidden">
+          <div class="invisible absolute top-0 right-0 px-3">
             <p class="text-cBlack visible text-xs md:text-xl font-bold">
               {{ topMovie[0].title }}
             </p>
-            <!-- <p class="text-cBlack visible text-xs font-bold">
+            <p class="text-cBlack visible text-xs font-bold">
               {{ topMovie[0].climber[0].name }}
-            </p> -->
+            </p>
           </div>
-        </div>
-      </div>
+        </div> -->
     </NuxtLink>
     <!-- トップ動画ここまで -->
-    <div class="bg-cBase pt-44 md:pt-96 pb-5">
+    <div class="bg-cBase pt-4 md:pt-8 pb-5 md:ml-1/24">
       <base-heading>Latest Videos</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <!-- {{ movies }} -->
@@ -40,7 +39,7 @@
         </div>
     </div>
     <!-- Featuresここから -->
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:ml-1/24">
       <base-heading>Features / {{ featuresTitle }}</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -64,7 +63,7 @@
         </div>
     </div> -->
     <!-- Garallyここから -->
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:mx-1/24">
       <base-heading>Gallery</base-heading>
         <div class="grid grid-cols-3 md:grid-cols-9 gap-0.5 px-0.5 md:px-3">
           <base-tile
@@ -78,7 +77,7 @@
         </div>
     </div>
 
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:ml-1/24">
       <base-heading>Boulder</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -91,7 +90,7 @@
         </div>
     </div>
 
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:ml-1/24">
       <base-heading>Sport</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -104,7 +103,7 @@
         </div>
     </div>
 
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:ml-1/24">
       <base-heading>Trad</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -117,7 +116,7 @@
         </div>
     </div>
 
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:ml-1/24">
       <base-heading>BigWall</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -130,7 +129,7 @@
         </div>
     </div>
 
-    <div class="bg-cBase py-5">
+    <div class="bg-cBase py-5 md:ml-1/24">
       <base-heading>Womens</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
           <base-card 
@@ -143,7 +142,7 @@
         </div>
     </div>
   <!-- layoutここまで -->
-  </layout-wrapper>
+  </layout-top-wrapper>
 </template>
 
 <script>
