@@ -4,25 +4,19 @@
     <layout-tab />
     <!-- トップ動画ここから -->
     <NuxtLink :to="`/movie/${topMovie[0].id}/`">
-      <!-- <div class="relative invisible"> -->
-        <!-- preload="none" preload="metadata" にするか -->
-        <div class="relartive inset-0 transition duration-500 opacity-100 md:w-full">
-          <video class="visible video md:w-screen md:h-160 md:object-cover" preload="none" poster="/images/preload_alex.png" autoplay loop muted playsinline webkit-playsinline="true">
+
+        <div class="relative inset-0 md:w-full">
+          <video class="visible video md:w-screen md:h-96 lg:h-128 md:object-cover" preload="none" poster="/images/preload.png" autoplay loop muted playsinline webkit-playsinline="true">
             <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
+
           </video>
-        </div>
-        
-        <!-- <div class="transition duration-500 z-10 flex-1 py-7 md:py-20 lg:py-32">
-          <div class="absolute top-64 left-40 md:top-140 md:left-100 lg:top-148 lg:left-112 xl:hidden">
-          <div class="invisible absolute top-0 right-0 px-3">
-            <p class="text-cBlack visible text-xs md:text-xl font-bold">
-              {{ topMovie[0].title }}
-            </p>
-            <p class="text-cBlack visible text-xs font-bold">
-              {{ topMovie[0].climber[0].name }}
-            </p>
+          <div class="top-title absolute bottom-2 right-2 md:bottom-4 md:right-6 lg:right-10">
+              <p class="text-cMain visible text-xs md:text-xl lg:text-2xl font-semibold">
+                {{ topMovie[0].title }}
+              </p>
           </div>
-        </div> -->
+
+        </div>
     </NuxtLink>
     <!-- トップ動画ここまで -->
     <div class="bg-cBase pt-4 md:pt-8 pb-5 md:ml-1/24">
@@ -214,3 +208,13 @@ export default {
 }
 
 </script>
+
+</script>
+
+<style scoped>
+
+.top-title{
+    text-shadow: #171717 1px 0 10px;
+}
+
+</style>

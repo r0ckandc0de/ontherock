@@ -83,6 +83,9 @@
           </div>
         </div>
       </div>
+      <div class="bg-cBase pl-4 md:px-0">
+        <h2 class="text-cMain font-semibold pb-2">Related Videos</h2>
+      </div>
   </layout-wrapper>
 </div>
 
