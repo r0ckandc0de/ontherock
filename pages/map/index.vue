@@ -28,7 +28,7 @@
     @closeclick="infoWinOpen = false"
     >
       <NuxtLink :to="'/area/' + marker.id + '/'">
-        <div class="font-sans text-cBase h-7 flex justify-center items-center">
+        <div class="font-sans text-cBase h-6 flex justify-center items-center">
           {{ marker.name }}
         </div>
       </NuxtLink>

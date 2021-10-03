@@ -81,9 +81,35 @@
           </div>
           <!-- リンク先 -->
         </div>
+        
       </div>
-      <div class="bg-cBase pl-4 md:px-0">
-        <h2 class="text-cMain font-semibold pb-2">Related Videos</h2>
+
+      <div v-if="movie.editor[0].instagram || movie.editor[0].youtube" class="bg-cBase px-4 md:px-0 pb-4">
+        <h2 class="text-cMain font-semibold pb-2">Editor Links</h2>
+        <div>
+          <div v-if="movie.editor[0].instagram">
+            <a :href="movie.editor[0].instagram">
+            <button class="font-bold py-2 text-cMain rounded inline-flex items-center">
+              <i class="lab la-instagram text-3xl"></i>
+              <span class="ml-1">{{movie.editor[0].name}}'s instagram</span>
+            </button>
+            </a>
+          </div>
+
+          <div v-if="movie.editor[0].youtube">
+            <a :href="movie.editor[0].youtube">
+            <button class="font-bold py-4 text-cMain rounded inline-flex items-center">
+              <i class="lab la-youtube text-3xl"></i>
+              <span class="ml-1">{{movie.editor[0].name}}'s YouTube</span>
+            </button>
+            </a>
+          </div>
+        <div class="border-b"></div>
+        </div>
+      </div>
+
+      <div v-if="relatedMovies != ''" class="bg-cBase pl-4 pb-16 md:px-0 pt-4">
+        <h2 class="text-cMain font-semibold pb-4">Related Videos</h2>
         <div class="overflow-x-scroll scrollbar-hide flex">
           <base-card 
             v-for="(relatedMovie, index) in relatedMovies"
