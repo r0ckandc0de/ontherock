@@ -28,7 +28,7 @@
     @closeclick="infoWinOpen = false"
     >
       <NuxtLink :to="'/area/' + marker.id + '/'">
-        <div class="text-center font-sans text-cBase">
+        <div class="text-center font-sans text-cBase h-5 flex justify-center items-center">
           {{ marker.name }}
         </div>
       </NuxtLink>
@@ -65,7 +65,7 @@ export default {
         styles: [],
       },
       infoOptions: {
-        // minWidth: 160,
+        minWidth: 160,
         pixelOffset: {
           width: 0,
           height: -35,
@@ -130,5 +130,6 @@ export default {
   }
 
 }
+
 
 </style>
