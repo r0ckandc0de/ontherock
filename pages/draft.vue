@@ -2,7 +2,6 @@
 <div v-if="movie.id">
   <layout-wrapper>
     <layout-tab />
-    
       <div class="video">
         <iframe width="100%" height="100%" :src="`https://www.youtube.com/embed/${movie.url}`" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
@@ -81,10 +80,33 @@
             </div>
 
           </div>
+          <!-- リンク先 -->
         </div>
+        
       </div>
-      <div class="bg-cBase pl-4 md:px-0">
-        <h2 class="text-cMain font-semibold pb-2">Related Videos</h2>
+
+      <div v-if="movie.editor[0].instagram || movie.editor[0].youtube" class="bg-cBase px-4 md:px-0 pb-4">
+        <h2 class="text-cMain font-semibold pb-2">Editor Links</h2>
+        <div>
+          <div v-if="movie.editor[0].instagram">
+            <a :href="movie.editor[0].instagram" target="_blank" rel="noopener noreferrer">
+            <button class="font-bold py-2 text-cMain rounded inline-flex items-center">
+              <i class="lab la-instagram text-3xl"></i>
+              <span class="ml-1">{{movie.editor[0].name}}'s instagram</span>
+            </button>
+            </a>
+          </div>
+
+          <div v-if="movie.editor[0].youtube">
+            <a :href="movie.editor[0].youtube" target="_blank" rel="noopener noreferrer">
+            <button class="font-bold py-4 text-cMain rounded inline-flex items-center">
+              <i class="lab la-youtube text-3xl"></i>
+              <span class="ml-1">{{movie.editor[0].name}}'s YouTube</span>
+            </button>
+            </a>
+          </div>
+        <div class="border-b"></div>
+        </div>
       </div>
   </layout-wrapper>
 </div>
@@ -119,6 +141,11 @@ export default {
     this.movie = data;
     // console.log(this)
     // console.log('created')
+  },
+  head() {
+    return {
+      title: this.movie.title,
+    }
   },
 }
 </script>

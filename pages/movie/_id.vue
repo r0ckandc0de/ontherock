@@ -88,7 +88,7 @@
         <h2 class="text-cMain font-semibold pb-2">Editor Links</h2>
         <div>
           <div v-if="movie.editor[0].instagram">
-            <a :href="movie.editor[0].instagram">
+            <a :href="movie.editor[0].instagram" target="_blank" rel="noopener noreferrer">
             <button class="font-bold py-2 text-cMain rounded inline-flex items-center">
               <i class="lab la-instagram text-3xl"></i>
               <span class="ml-1">{{movie.editor[0].name}}'s instagram</span>
@@ -97,7 +97,7 @@
           </div>
 
           <div v-if="movie.editor[0].youtube">
-            <a :href="movie.editor[0].youtube">
+            <a :href="movie.editor[0].youtube" target="_blank" rel="noopener noreferrer">
             <button class="font-bold py-4 text-cMain rounded inline-flex items-center">
               <i class="lab la-youtube text-3xl"></i>
               <span class="ml-1">{{movie.editor[0].name}}'s YouTube</span>
