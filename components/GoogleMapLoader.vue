@@ -16,17 +16,14 @@
 </template>
 
 <script>
+import { mapSettings } from "@/constants/mapSettings";
 
 export default {
-    props: {
-        mapConfig: Object,
-        // apiKey: String
-    },
-
     data() {
         return {
         google: null,
-        map: null
+        map: null,
+        maplocation: { lng: 37.741667, lat: -119.6025 },
         };
     },
 
@@ -47,17 +44,33 @@ export default {
             if(window.mapLoaded){
                 clearInterval(timer);
                 this.google = window.google
-                // console.log(new this.google.maps.LatLng(-33.866, 151.196))
                 this.initializeMap();
             }
         },500)
     },
 
     methods: {
-        initializeMap() {
-        const mapContainer = this.$refs.googleMap;
-        this.map = new this.google.maps.Map(mapContainer, this.mapConfig);
-        }
+        async initializeMap() {
+          const mapContainer = this.$refs.googleMap;
+          const currentPosTmp = await this.getCurrentPosition()
+          const currentPos = {
+            lat: currentPosTmp.coords.latitude,
+            lng: currentPosTmp.coords.longitude,
+          }
+          this.maplocation = currentPos
+
+          this.map = new this.google.maps.Map(mapContainer, {
+            zoom: 8,
+            //mapの詳細設定
+            // ...mapSettings,
+            center: this.maplocation
+          });
+        },
+        getCurrentPosition() {
+          return new Promise(function (resolve, reject) {
+            navigator.geolocation.getCurrentPosition(resolve, reject)
+          })
+        },
     }
 };
 </script>

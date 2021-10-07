@@ -2,122 +2,162 @@
   <!-- layoutここから -->
   <layout-wrapper>
     <layout-tab />
-    <GmapMap
-    ref="gmap"
-    map-type-id="roadmap"
-    :center="maplocation"
-    :zoom="zoom"
-    :style="styleMap"
-    :options="mapOptions"
-    >
+    <!-- <google-map-demo /> -->
+    <google-map-loader>
+    
 
-    <GmapMarker
-    v-for="(m, index) in markers"
-    :key="index"
-    :title="m.name"
-    :position="{ lat: m.lat, lng: m.lng }"
-    :clickable="true"
-    :draggable="false"
-    @click="onClickMarker(index, m)"
-    />
-
-    <GmapInfoWindow
-    :options="infoOptions"
-    :position="infoWindowPos"
-    :opened="infoWinOpen"
-    @closeclick="infoWinOpen = false"
-    >
-      <NuxtLink :to="'/area/' + marker.id + '/'">
-        <div class="font-sans text-cBase h-6 flex justify-center items-center">
-          {{ marker.name }}
-        </div>
-      </NuxtLink>
+    <template slot-scope="{ google, map }">
       
-    </GmapInfoWindow>
-    </GmapMap>
+      <google-map-marker
+        v-for="marker in markers"
+        :key="marker.id"
+        :marker="marker"
+        :google="google"
+        :map="map"
+        @parent-event="parentEvent(marker)"
+      />
 
+      <!-- <google-map-marker
+        :marker="markers[1]"
+        :google="google"
+        :map="map"
+      /> -->
 
-  <!-- layoutここまで -->
+      <div v-if="isOpen" id="window">
+        
+        <div 
+          class="text-cMain mt-24 md:mt-26 bg-cBase bg-opacity-75 absolute top-0 w-screen h-screen"
+          @click="closeWindow"
+        >
+          <!-- <div class="close-button"> -->
+          <button type="button" @click="closeWindow" class="close-button bg-cMain p-2 inline-flex items-center justify-center absolute text-cBase hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6 text-cBase" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+          </button>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-24 px-4 md:max-w-2xl lg:max-w-6xl">
+            <base-card 
+              v-for="(movie, index) in targetMovies"
+              :key='index'
+              :title="movie.title"
+              :url="movie.url"
+              :id="movie.id"
+            />
+          </div>
+        </div>
+      </div>
+
+    </template>
+    
+    </google-map-loader>
+    
+
   </layout-wrapper>
 </template>
 
 <script>
 
+import { mapSettings } from "@/constants/mapSettings";
+
 export default {
 
   data() {
     return {
-    //  maplocation: { lng: 0, lat: 0 },
-    maplocation: { lng: 37.741667, lat: -119.6025 },
-      zoom: 8,
-      styleMap: {
-        width: '100vw',
-        height: '100vh',
-      },
-      mapOptions: {
-        streetViewControl: true,
-        zoomControl: true,
-        mapTypeControl: true,
-        scaleControl: false,
-        rotateControl: false,
-        fullscreenControl: true,
-        disableDefaultUi: false,
-        styles: [],
-      },
-      infoOptions: {
-        minWidth: 160,
-        pixelOffset: {
-          width: 0,
-          height: -35,
-        },
-      },
-      infoWindowPos: null,
-      infoWinOpen: false,
-      marker: {
-        name: '',
-        position: { lat: 0, lng: 0 },
-      },
+      maplocation: { lng: 37.741667, lat: -119.6025 },
+      areaId: null,
+      isOpen:false
     };
   },
-  async mounted() {
-    const currentPosTmp = await this.getCurrentPosition()
-    const currentPos = {
-      lat: currentPosTmp.coords.latitude,
-      lng: currentPosTmp.coords.longitude,
-    }
-    this.maplocation = currentPos
-  },
+  // async mounted() {
+  //   const currentPosTmp = await this.getCurrentPosition()
+  //   const currentPos = {
+  //     lat: currentPosTmp.coords.latitude,
+  //     lng: currentPosTmp.coords.longitude,
+  //   }
+  //   this.maplocation = currentPos
+  //   console.log(this.maplocation)
+  // },
   methods: {
-    getCurrentPosition() {
-      return new Promise(function (resolve, reject) {
-        navigator.geolocation.getCurrentPosition(resolve, reject)
+    parentEvent(marker){
+      this.areaId = marker.id
+      this.isOpen = true
+
+    },
+    closeWindow(){
+      this.isOpen = false
+    },
+    // onClickMarker(marker) {
+    //   console.log('hoge')
+    //   this.areaName = marker.title
+    //   window.alert(this.areaName)
+    //   console.log(marker)
+    // }
+    // getCurrentPosition() {
+    //   return new Promise(function (resolve, reject) {
+    //     navigator.geolocation.getCurrentPosition(resolve, reject)
+    //   })
+    // },
+  },
+  computed: {
+    mapConfig() {
+      return {
+        zoom:8,
+        // ...mapSettings,
+        center: this.mapCenter
+      };
+    },
+    mapCenter() {
+      // return this.markers[1].position;
+      return this.maplocation;
+      // return {lat: -33.866, lng: 151.196}
+    },
+    markers(){
+      return this.areas.map(area=>{
+        return {
+          id: area.id,
+          position:{lat: area.lat, lng: area.lng},
+          title:area.name
+        }
       })
     },
-    onClickMarker(index, marker) {
-      this.$refs.gmap.$mapPromise.then((map) => {
-        map.panTo({lat: marker.lat, lng: marker.lng})
+    targetErea(){
+      return this.areas.filter(area =>{
+        return area.id === this.areaId
       })
-      this.infoWindowPos = { lat: marker.lat, lng: marker.lng }
-      this.marker = marker
-      this.infoWinOpen = true
     },
+    targetMovies(){
+      return this.movies.filter(movie =>{
+        return movie.area.id === this.areaId
+      })
+    }
   },
   async asyncData({ $microcms }) {
-    const markers = await $microcms.get({
+    const areas = await $microcms.get({
       endpoint: 'area',
       queries: { limit: 100},
     });
+    
+    const movies = await $microcms.get({
+      endpoint: 'movie',
+      queries: { limit: 50 },
+    });
 
     return{
-      markers: markers.contents,
-
+      areas: areas.contents,
+      movies: movies.contents,
     }
   }
-}
+};
 
 </script>
 
 <style scoped>
+
+.close-button{
+  top: 1%;
+  right: 1%;
+}
 
 @media(min-width: 768px){
 
@@ -130,6 +170,5 @@ export default {
   }
 
 }
-
 
 </style>
