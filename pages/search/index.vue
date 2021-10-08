@@ -1,7 +1,7 @@
 <template>
   <!-- layoutここから -->
   <layout-wrapper>
-    <layout-tab />
+    <!-- <layout-tab /> -->
 
     <div class="flex flex-col min-h-screen bg-cBase px-3">
       <!-- 検索 -->

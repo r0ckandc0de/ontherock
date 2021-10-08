@@ -1,10 +1,9 @@
 <template>
   <!-- layoutここから -->
   <layout-top-wrapper>
-    <layout-tab />
+    <!-- <layout-tab /> -->
     <!-- トップ動画ここから -->
     <NuxtLink :to="`/movie/${topMovie[0].id}/`">
-
         <div class="relative inset-0 md:w-full">
           <video class="visible video md:w-screen md:h-96 lg:h-128 md:object-cover" preload="none" poster="/images/preload.png" autoplay loop muted playsinline webkit-playsinline="true">
             <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
@@ -22,7 +21,6 @@
     <div class="bg-cBase pt-4 md:pt-8 pb-5 md:ml-1/24">
       <base-heading>Latest Videos</base-heading>
         <div class="overflow-x-scroll scrollbar-hide flex ml-3">
-          <!-- {{ movies }} -->
           <base-card 
             v-for="(movie, index) in movies"
             :key='index'
@@ -45,17 +43,6 @@
           />
         </div>
     </div>
-    <!-- Tagsここから -->
-    <!-- <div class="bg-cWhite py-5">
-      <base-heading>Tags</base-heading>
-        <div class="overflow-x-scroll scrollbar-hide flex ml-3">
-          <base-card />
-          <base-card />
-          <base-card />
-          <base-card />
-          <base-card />
-        </div>
-    </div> -->
     <!-- Garallyここから -->
     <div class="bg-cBase py-5 md:mx-1/24">
       <base-heading>Gallery</base-heading>
@@ -206,8 +193,6 @@ export default {
     }
   }
 }
-
-</script>
 
 </script>
 

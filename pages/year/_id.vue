@@ -1,6 +1,6 @@
 <template>
   <layout-wrapper>
-    <layout-tab />
+    <!-- <layout-tab /> -->
     <layout-movie-list-wrapper>
         <base-heading>{{ year }}</base-heading>
         <layout-movie-list>

@@ -1,18 +1,16 @@
 <template>
-    <!-- <div @click="onClickMarker(marker)" id="content">{{ marker.title }}</div> -->
-    <div @click="childEvent(marker)" id="content">{{ marker.title }}</div>
+    <div @click="googleMapMarkerEvent(marker)" id="content">{{ marker.title }}</div>
 </template>
 
 <script>
-import { POINT_MARKER_ICON_CONFIG } from "@/constants/mapSettings";
 
 export default {
-
-    data(){
-        return{
-          areaName: null,
-        }
-    },
+  name: 'BaseGoogleMapMarker',
+  data(){
+      return{
+        areaName: null,
+      }
+  },
 
   props: {
     google: {
@@ -30,7 +28,6 @@ export default {
   },
 
   mounted() {
-
     class Popup extends this.google.maps.OverlayView {
             position;
             containerDiv;
@@ -44,10 +41,12 @@ export default {
 
             bubbleAnchor.classList.add("popup-bubble-anchor");
             bubbleAnchor.appendChild(content);
+
             // This zero-height div is positioned at the bottom of the tip.
             this.containerDiv = document.createElement("div");
             this.containerDiv.classList.add("popup-container");
             this.containerDiv.appendChild(bubbleAnchor);
+
             // Optionally stop clicks, etc., from bubbling up to the map.
             Popup.preventMapHitsAndGesturesFrom(this.containerDiv);
         }
@@ -66,6 +65,7 @@ export default {
             const divPosition = this.getProjection().fromLatLngToDivPixel(
                 this.position
             );
+
             // Hide the popup when it is far out of view.
             const display =
                 Math.abs(divPosition.x) < 4000 && Math.abs(divPosition.y) < 4000
@@ -89,43 +89,18 @@ export default {
     );
 
     popup.setMap(this.map)
-
-    // const { Marker } = this.google.maps;
-
-    // new Marker({
-    //   position: this.marker.position,
-    //   marker: this.marker,
-    //   map: this.map,
-    //   icon: POINT_MARKER_ICON_CONFIG
-    // });
   },
 
-    // render() {}
-
-    methods: {
-      childEvent(){
-        this.$emit('parent-event', 'marker')
-      }
-      // onClickMarker(){
-      //   this.$emit('click', 'marker')
-      // }
-    // onClickMarker(marker) {
-    //   this.areaName = marker.title
-    //   window.alert(this.areaName)
-    //   console.log(marker)
-      // this.$refs.gmap.$mapPromise.then((map) => {
-      //   map.panTo({lat: marker.lat, lng: marker.lng})
-      // })
-      // this.infoWindowPos = { lat: marker.lat, lng: marker.lng }
-      // this.marker = marker
-      // this.infoWinOpen = true
-    // },
+  methods: {
+    googleMapMarkerEvent(){
+      this.$emit('click-marker', 'marker')
+    }
   },
 };
+
 </script>
 
 <style>
-/* scopeじゃない,afterの疑似要素が効かない */
 
 /* The popup bubble styling. */
 .popup-bubble {

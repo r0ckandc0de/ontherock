@@ -1,6 +1,6 @@
 <template>
   <layout-wrapper>
-    <layout-tab />
+    <!-- <layout-tab /> -->
     <layout-movie-list-wrapper>
       <base-heading>{{ tag[0].name }}</base-heading>
       <layout-movie-list>

@@ -19,6 +19,7 @@
 import { mapSettings } from "@/constants/mapSettings";
 
 export default {
+    name: 'LayoutGoogleMapLoader',
     data() {
         return {
         google: null,
@@ -58,7 +59,6 @@ export default {
             lng: currentPosTmp.coords.longitude,
           }
           this.maplocation = currentPos
-
           this.map = new this.google.maps.Map(mapContainer, {
             zoom: 8,
             //mapの詳細設定
