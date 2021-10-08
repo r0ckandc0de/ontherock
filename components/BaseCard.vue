@@ -2,7 +2,6 @@
   <div class="flex-shrink-0 w-40 md:w-52 xl:w-64 mr-3">
     <NuxtLink :to="'/movie/' + id + '/'">
       <div class="w-full">
-        <!-- <img class="max-w-full" :src="`https://i.ytimg.com/vi/${url}/${pictureNumber}.jpg`" :alt="title"> -->
         <img class="max-w-full" :src="`https://i.ytimg.com/vi/${url}/mqdefault.jpg`" :alt="title">
       </div>
       <div class="mt-2">
@@ -28,10 +27,6 @@ export default {
       type: String,
       required: true,
     },
-    // pictureNumber:{
-    //   type: Number,
-    //   default: 0,
-    // }
   }
 }
 </script>

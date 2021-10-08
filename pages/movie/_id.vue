@@ -77,6 +77,18 @@
                 </div>
               </div>
             </div>
+            <div v-if="movie.sponsor != ''" class="my-4 inline-block w-full">
+              <div>
+                <h2 class="text-cMain font-semibold">Presented by</h2>
+              </div>
+              <div>
+                <div v-for="(sponsor, index) in movie.sponsor"
+                  :key="index"
+                >
+                  <NuxtLink class="text-cMain text-sm border-b-2" :to="'/presented/' + sponsor.id + '/'">{{ sponsor.name }}</NuxtLink>
+                </div>
+              </div>
+            </div>
 
           </div>
           <!-- リンク先 -->

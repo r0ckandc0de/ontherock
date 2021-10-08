@@ -15,7 +15,6 @@ export default {
     className:{
         type: String,
         default:'pt-4'
-        // default:'h-screen pt-4'
     },
     bool:{
         type: Boolean,
