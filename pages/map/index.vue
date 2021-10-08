@@ -1,7 +1,7 @@
 <template>
   <!-- layoutここから -->
   <layout-wrapper>
-    <!-- <layout-tab /> -->
+    <layout-tab />
     <layout-google-map-loader>
       <template slot-scope="{ google, map }">
         <base-google-map-marker

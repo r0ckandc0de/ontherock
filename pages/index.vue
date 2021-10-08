@@ -1,7 +1,7 @@
 <template>
   <!-- layoutここから -->
   <layout-top-wrapper>
-    <!-- <layout-tab /> -->
+    <layout-tab />
     <!-- トップ動画ここから -->
     <NuxtLink :to="`/movie/${topMovie[0].id}/`">
         <div class="relative inset-0 md:w-full">
