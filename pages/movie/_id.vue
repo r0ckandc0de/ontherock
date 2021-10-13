@@ -96,8 +96,8 @@
         
       </div>
 
-      <div v-if="movie.editor[0].instagram || movie.editor[0].youtube" class="bg-cBase px-4 md:px-0 pb-4">
-        <h2 class="text-cMain font-semibold pb-2">Editor Links</h2>
+      <div v-if="movie.editor[0].instagram || movie.editor[0].youtube || movie.sponsor[0]" class="bg-cBase px-4 md:px-0 pb-4">
+        <h2 class="text-cMain font-semibold pb-2">Related Links</h2>
         <div>
           <div v-if="movie.editor[0].instagram">
             <a :href="movie.editor[0].instagram" target="_blank" rel="noopener noreferrer">
@@ -110,13 +110,25 @@
 
           <div v-if="movie.editor[0].youtube">
             <a :href="movie.editor[0].youtube" target="_blank" rel="noopener noreferrer">
-            <button class="font-bold py-4 text-cMain rounded inline-flex items-center">
+            <button class="font-bold py-2 text-cMain rounded inline-flex items-center">
               <i class="lab la-youtube text-3xl"></i>
               <span class="ml-1">{{movie.editor[0].name}}'s YouTube</span>
             </button>
             </a>
           </div>
-          <div class="border-b"></div>
+
+          <div v-if="movie.sponsor[0]">
+            <div v-for="(sponsor, index) in movie.sponsor" :key="index">
+              <a :href="sponsor.url" target="_blank" rel="noopener noreferrer">
+              <button class="font-bold py-2 text-cMain rounded inline-flex items-center">
+                <i class="las la-store text-3xl"></i>
+                <span class="ml-1">{{sponsor.name}}</span>
+              </button>
+              </a>
+            </div>
+          </div>
+
+          <div class="border-b py-2"></div>
         </div>
       </div>
 
