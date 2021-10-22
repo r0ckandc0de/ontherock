@@ -1,18 +1,33 @@
 <template>
   <layout-wrapper>
     <layout-tab />
-    <layout-movie-list-wrapper>
-        <base-heading>{{ area[0].name }}</base-heading>
-        <layout-movie-list>
-          <base-card 
-            v-for="(movie, index) in movies"
-            :key='index'
-            :title="movie.title"
-            :url="movie.url"
-            :id="movie.id"
-          />
-      </layout-movie-list>
-    </layout-movie-list-wrapper>
+    <div class="text-cMain">{{ $t('welcome') }}</div>
+    <ul>
+      <li v-if="$i18n.locale !== 'en'">
+        <nuxt-link :to="switchLocalePath('en')" class="text-cMain">English</nuxt-link>
+      </li>
+      <li v-if="$i18n.locale !== 'ja'">
+        <nuxt-link :to="switchLocalePath('ja')" class="text-cMain">日本語</nuxt-link>
+      </li>
+    </ul>
+    <div v-if="$i18n.locale === 'ja'">
+      <pre class="text-cMain">{{ area }}</pre>
+      <div v-html="area[0].map"></div>
+    </div>
+    <div v-if="$i18n.locale !== 'ja'">
+      <layout-movie-list-wrapper>
+          <base-heading>{{ area[0].name }}</base-heading>
+          <layout-movie-list>
+            <base-card 
+              v-for="(movie, index) in movies"
+              :key='index'
+              :title="movie.title"
+              :url="movie.url"
+              :id="movie.id"
+            />
+        </layout-movie-list>
+      </layout-movie-list-wrapper>
+    </div>
   </layout-wrapper>
 </template>
 

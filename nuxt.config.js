@@ -54,6 +54,23 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    ['@nuxtjs/i18n', {
+      locales: [
+        {
+          code: 'en',
+          file: 'en.js',
+          iso: 'en-US'
+        },
+        {
+          code: 'ja',
+          file: 'ja.js',
+          iso: 'ja_JP',
+        }
+      ],
+      lazy: true,
+      langDir: 'lang/',
+      defaultLocale: 'en'
+    }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -70,6 +87,7 @@ export default {
   privateRuntimeConfig: {
     apiKey: API_KEY,
   },
+  
   manifest: {
     name: "On the Rock",
     lang: "en",
@@ -84,5 +102,22 @@ export default {
 
   workbox: {
     dev: false, // Service Workerを開発環境で使用するかどうか
+    runtimeCaching: [
+      {
+        urlPattern: '^https://focused-newton-92e685.netlify.app/.*',
+        handler: 'staleWhileRevalidate',
+        strategyOptions: {
+          cacheName: 'site-cache',
+        },
+        strategyPlugins: [
+          {
+            use: 'Expiration',
+            config: {
+              maxAgeSeconds: 24 * 60 * 60 * 30
+            }
+          }
+        ]
+      }
+    ]
   }
 }
