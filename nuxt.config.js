@@ -105,7 +105,7 @@ export default {
     runtimeCaching: [
       {
         urlPattern: '^https://focused-newton-92e685.netlify.app/.*',
-        handler: 'staleWhileRevalidate',
+        handler: 'cacheFirst',
         strategyOptions: {
           cacheName: 'site-cache',
         },
