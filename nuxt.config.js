@@ -14,7 +14,11 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'mobile-web-app-capable', content: 'yes' },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+      { name: 'apple-mobile-web-app-title', content: 'On the Rock' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
@@ -98,6 +102,10 @@ export default {
     "og:description": "Climbing Movies Collection in the World",
     theme_color: "#fffcf1",
     background_color: "#171717",
+    display: 'standalone',
+    orientation: 'portrait',
+    scope: '/',
+    start_url: '/',
   },
 
   workbox: {
