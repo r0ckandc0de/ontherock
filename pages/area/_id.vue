@@ -1,7 +1,7 @@
 <template>
   <layout-wrapper>
     <layout-tab />
-    <div class="text-cMain">{{ $t('welcome') }}</div>
+    <!-- <div class="text-cMain">{{ $t('welcome') }}</div>
     <ul>
       <li v-if="$i18n.locale !== 'en'">
         <nuxt-link :to="switchLocalePath('en')" class="text-cMain">English</nuxt-link>
@@ -9,19 +9,15 @@
       <li v-if="$i18n.locale !== 'ja'">
         <nuxt-link :to="switchLocalePath('ja')" class="text-cMain">日本語</nuxt-link>
       </li>
-    </ul>
+    </ul> -->
     <div v-if="$i18n.locale === 'ja'">
       <!-- <pre class="text-cMain">{{ area }}</pre> -->
-      <div v-html="area[0].news" class="news"></div>
-      <div v-html="area[0].facility" class="facility"></div>
+      <div v-html="area[0].news" class="news text-cMain text-center"></div>
+      <div v-html="area[0].facility" class="facility text-cMain"></div>
       <div v-html="area[0].map" class="googleMap"></div>
       <div v-html="area[0].twitter" class="twitter"></div>
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-      <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v12.0" nonce="NyahAgtx"></script>
-      <div class="fb-page" data-href="https://www.facebook.com/freeclimbjp" data-tabs="timeline" data-width="" data-height="315" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/freeclimbjp" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/freeclimbjp">日本フリークライミング協会</a></blockquote></div>
-      <!-- <span v-html="area[0].facebook" class="facebook" ></span> -->
+      <div v-html="area[0].facebook" class="facebook" ></div>
     </div>
 
     <div v-if="$i18n.locale !== 'ja'">
@@ -71,6 +67,19 @@ export default {
 </script>
 
 <style scoped>
+
+iframe {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+img {
+    margin: 0 auto;
+}
+
+.news {
+    text-align: -webkit-center;
+}
 
 .video {
 position: relative;
