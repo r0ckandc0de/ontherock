@@ -1,5 +1,5 @@
 <template>
-    <header class="w-full md:static bg-cBase px-2 py-1 z-50">
+    <header class="w-full md:static bg-cBase px-2 pt-5 pb-1 z-50">
       <div class="mx-auto md:flex md:items-center">
         <div
           class="w-full mx-auto px-6 md:px-0 flex justify-center md:justify-between items-center h-10"
