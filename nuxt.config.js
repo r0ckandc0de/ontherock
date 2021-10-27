@@ -112,7 +112,7 @@ export default {
     dev: false, // Service Workerを開発環境で使用するかどうか
     runtimeCaching: [
       {
-        urlPattern: '^https://focused-newton-92e685.netlify.app/.*',
+        urlPattern: '^https://ontherock-climbing.com/.*',
         handler: 'staleWhileRevalidate',
         strategyOptions: {
           cacheName: 'site-cache',
