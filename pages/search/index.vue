@@ -100,6 +100,11 @@
               url="tag/nmj89vf2lbzz/"
               className="text-cGreen border-cGreen leading-8 border text-center rounded-full"
             />
+            <base-tag 
+              title="mellow"
+              url="tag/a92dkigqqx/"
+              className="text-cGreen border-cGreen leading-8 border text-center rounded-full"
+            />
             
           </layout-tag-wrapper>
         </div>
