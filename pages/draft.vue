@@ -44,7 +44,7 @@
               </div>
             </div>
 
-            <div class="my-4 inline-block w-full">
+            <div v-if="movie.problem != ''" class="my-4 inline-block w-full">
               <div>
                 <h2 class="text-cMain font-semibold">Problem</h2>
               </div>
