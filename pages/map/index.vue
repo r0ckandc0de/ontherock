@@ -14,7 +14,7 @@
         />
         <div v-if="isOpen" id="window">
           <div 
-            class="text-cMain mt-24 md:mt-26 bg-cBase bg-opacity-90 absolute top-0 w-screen h-screen"
+            class="text-cMain mt-28 md:mt-30 bg-cBase bg-opacity-90 absolute top-0 w-screen h-screen"
             @click="closeWindow"
           >
             <button type="button" @click="closeWindow" class="close-button bg-cMain p-2 inline-flex items-center justify-center absolute text-cBase hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
