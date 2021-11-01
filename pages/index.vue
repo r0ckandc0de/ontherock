@@ -5,7 +5,7 @@
     <!-- トップ動画ここから -->
     <NuxtLink :to="`/movie/${topMovie[0].id}/`">
         <div class="relative inset-0 md:w-full">
-          <video class="visible video md:w-screen md:h-96 lg:h-128 md:object-cover" preload="none" poster="/images/preload.png" autoplay loop muted playsinline webkit-playsinline="true">
+          <video class="visible video md:w-screen md:h-96 lg:h-128 md:object-cover" preload="none" poster="/images/preload_gga.png" autoplay loop muted playsinline webkit-playsinline="true">
             <source src="~/assets/video/short_sample_alex.mp4" type="video/mp4">
 
           </video>
