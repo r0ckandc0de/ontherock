@@ -109,7 +109,7 @@ export default {
   },
   pwa: {
     icon: {
-      source: 'static/icon_pwa.png',
+      source: 'static/icon_pwa_small.png',
       fileName: 'icon_pwa.png'
     }
   },
