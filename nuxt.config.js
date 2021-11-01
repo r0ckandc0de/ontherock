@@ -107,7 +107,12 @@ export default {
     scope: '/',
     start_url: '/',
   },
-
+  pwa: {
+    icon: {
+      source: 'static/icon_pwa.png',
+      fileName: 'icon_pwa.png'
+    }
+  },
   workbox: {
     dev: false, // Service Workerを開発環境で使用するかどうか
     runtimeCaching: [
