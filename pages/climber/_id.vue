@@ -10,6 +10,8 @@
             :title="movie.title"
             :url="movie.url"
             :id="movie.id"
+            :isVimeo="movie.isVimeo"
+            :vimeoImage="movie.vimeoImage"
           />
       </layout-movie-list>
     </layout-movie-list-wrapper>

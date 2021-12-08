@@ -30,6 +30,8 @@
                 :title="movie.title"
                 :url="movie.url"
                 :id="movie.id"
+                :isVimeo="movie.isVimeo"
+                :vimeoImage="movie.vimeoImage"
               />
             </div>
           </div>

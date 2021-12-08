@@ -1,7 +1,16 @@
 <template>
   <layout-wrapper>
     <layout-tab />
-      <div class="video">
+
+      <div v-if="movie.isVimeo">
+        <div style="padding:56.25% 0 0 0;position:relative;">
+          <iframe :src="`https://player.vimeo.com/video/637838197?h=e1b23b186e${movie.url}`" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+          </iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
+
+      <div v-else class="video">
         <iframe width="100%" height="100%" :src="`https://www.youtube.com/embed/${movie.url}`" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="flex flex-col bg-cBase p-4 md:px-0">
@@ -96,9 +105,19 @@
         
       </div>
 
-      <div v-if="movie.editor[0].instagram || movie.editor[0].youtube || movie.sponsor[0]" class="bg-cBase px-4 md:px-0 pb-4">
+      <div v-if="movie.film || movie.editor[0].instagram || movie.editor[0].youtube || movie.sponsor[0]" class="bg-cBase px-4 md:px-0 pb-4">
         <h2 class="text-cMain font-semibold pb-2">Related Links</h2>
         <div>
+
+          <div v-if="movie.film">
+            <a :href="movie.film.url" target="_blank" rel="noopener noreferrer">
+            <button class="font-bold py-2 text-cMain rounded inline-flex items-center">
+              <i class="las la-video text-3xl"></i>
+              <span class="ml-1">{{movie.film.title}}</span>
+            </button>
+            </a>
+          </div>
+
           <div v-if="movie.editor[0].instagram">
             <a :href="movie.editor[0].instagram" target="_blank" rel="noopener noreferrer">
             <button class="font-bold py-2 text-cMain rounded inline-flex items-center">

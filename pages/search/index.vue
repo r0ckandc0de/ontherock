@@ -34,6 +34,8 @@
           :title="movie.title"
           :url="movie.url"
           :id="movie.id"
+          :isVimeo="movie.isVimeo"
+          :vimeoImage="movie.vimeoImage"
         />
         <div v-show="movies[0] == ''">
           <p class="text-cMain">sorry... No Movies</p>

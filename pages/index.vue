@@ -27,6 +27,8 @@
             :title="movie.title"
             :url="movie.url"
             :id="movie.id"
+            :isVimeo="movie.isVimeo"
+            :vimeoImage="movie.vimeoImage"
           />
         </div>
     </div>
@@ -40,6 +42,8 @@
             :title="feature.title"
             :url="feature.url"
             :id="feature.id"
+            :isVimeo="feature.isVimeo"
+            :vimeoImage="feature.vimeoImage"
           />
         </div>
     </div>
@@ -67,6 +71,8 @@
             :title="boulder.title"
             :url="boulder.url"
             :id="boulder.id"
+            :isVimeo="boulder.isVimeo"
+            :vimeoImage="boulder.vimeoImage"
           />
         </div>
     </div>
@@ -80,6 +86,8 @@
             :title="sport.title"
             :url="sport.url"
             :id="sport.id"
+            :isVimeo="sport.isVimeo"
+            :vimeoImage="sport.vimeoImage"
           />
         </div>
     </div>
@@ -93,6 +101,8 @@
             :title="trad.title"
             :url="trad.url"
             :id="trad.id"
+            :isVimeo="trad.isVimeo"
+            :vimeoImage="trad.vimeoImage"
           />
         </div>
     </div>
@@ -106,6 +116,8 @@
             :title="bigwall.title"
             :url="bigwall.url"
             :id="bigwall.id"
+            :isVimeo="bigwall.isVimeo"
+            :vimeoImage="bigwall.vimeoImage"
           />
         </div>
     </div>
@@ -119,6 +131,8 @@
             :title="women.title"
             :url="women.url"
             :id="women.id"
+            :isVimeo="women.isVimeo"
+            :vimeoImage="women.vimeoImage"
           />
         </div>
     </div>
