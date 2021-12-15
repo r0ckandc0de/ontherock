@@ -3,22 +3,34 @@ const { API_KEY, SERVICE_DOMAIN, API_URL } = process.env;
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'On the Rock',
+    title: 'On The Rock',
+    titleTemplate: '%s - On The Rock',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
+      prefix: 'og: http://ogp.me/ns#'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: "On The Rock is a climbing video app and website where you can find world's best climbing videos." },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'On The Rock' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://ontherock-climbing.com/' },
+      { hid: 'og:title', property: 'og:title', content: 'On The Rock' },
+      { hid: 'og:description', property: 'og:description', content: "On The Rock is a climbing video app and website where you can find world's best climbing videos." },
+      { hid: 'og:image', property: 'og:image', content: 'https://ontherock-climbing.com/images/common_ogp.png' },
+      // { property: 'article:publisher', content: 'FacebookURL' },
+      // { property: 'fb:app_id', content: 'FacebookAppID' },
+      // { name: 'twitter:card', content: 'summary' },
+      // { name: 'twitter:site', content: '@Twitter' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'mobile-web-app-capable', content: 'yes' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
-      { name: 'apple-mobile-web-app-title', content: 'On the Rock' },
+      { name: 'apple-mobile-web-app-title', content: 'On The Rock' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
@@ -98,8 +110,8 @@ export default {
     short_name: "On The Rock",
     title: "On The Rock",
     "og:title": "On The Rock",
-    description: "Climbing Movie Collection in the World",
-    "og:description": "Climbing Movie Collection in the World",
+    description: "On The Rock is a climbing video app and website where you can find world's best climbing videos.",
+    "og:description": "On The Rock is a climbing video app and website where you can find world's best climbing videos.",
     theme_color: "#fffcf1",
     background_color: "#171717",
     display: 'standalone',

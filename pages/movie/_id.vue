@@ -169,7 +169,18 @@
 <script>
 
 export default {
-
+  data () {
+    return {
+      meta: {
+        description: "On The Rock is a climbing video app and website where you can find world's best climbing videos.",
+        type: 'article',
+        url: 'https://ontherock-climbing.com/',
+      },
+    }
+  },
+  created(){
+    this.meta.image = "https://ontherock-climbing.com/icon.png"
+  },
   async asyncData({ $microcms, params, error }) {
     try {
       const movie = await $microcms.get({
@@ -179,9 +190,17 @@ export default {
         endpoint: 'movie',
         queries: { filters: `relatedMovie[contains]${params.id}` },
       })
+      let url = ""
+      if(movie.isVimeo){
+        url = `https://i.vimeocdn.com/video/${movie.vimeoImage}`
+      }
+      else{
+        url = `https://i.ytimg.com/vi/${movie.url}/mqdefault.jpg`
+      }
       return {
         movie: movie,
-        relatedMovies: relatedMovies.contents
+        relatedMovies: relatedMovies.contents,
+        url: url
       }
     } catch (err) {
       error({
@@ -192,6 +211,14 @@ export default {
   head() {
     return {
       title: this.movie.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.meta.description },
+        { hid: 'og:type', property: 'og:type', content: this.meta.type },
+        { hid: 'og:title', property: 'og:title', content: this.movie.title },
+        { hid: 'og:description', property: 'og:description', content: this.meta.description },
+        { hid: 'og:url', property: 'og:url', content: `${this.meta.url}movie/${this.movie.id}/` },
+        { hid: 'og:image', property: 'og:image', content: this.url },
+      ],
     }
   },
 }

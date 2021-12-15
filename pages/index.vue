@@ -205,7 +205,13 @@ export default {
       bigwalls: bigwalls.contents,
       womens: womens.contents,
     }
-  }
+  },
+  head () {
+    return {
+      titleTemplate: null,
+      title: 'On The Rock',
+    }
+  },
 }
 
 </script>
