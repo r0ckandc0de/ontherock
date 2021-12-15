@@ -21,7 +21,7 @@ export default {
       { hid: 'og:url', property: 'og:url', content: 'https://ontherock-climbing.com/' },
       { hid: 'og:title', property: 'og:title', content: 'On The Rock' },
       { hid: 'og:description', property: 'og:description', content: "On The Rock is a climbing video app and website where you can find world's best climbing videos." },
-      { hid: 'og:image', property: 'og:image', content: 'https://ontherock-climbing.com/images/common_ogp.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://ontherock-climbing.com/images/ogp/logo_ogp.png' },
       // { property: 'article:publisher', content: 'FacebookURL' },
       // { property: 'fb:app_id', content: 'FacebookAppID' },
       // { name: 'twitter:card', content: 'summary' },

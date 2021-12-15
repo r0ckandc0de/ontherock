@@ -178,9 +178,6 @@ export default {
       },
     }
   },
-  created(){
-    this.meta.image = "https://ontherock-climbing.com/icon.png"
-  },
   async asyncData({ $microcms, params, error }) {
     try {
       const movie = await $microcms.get({
@@ -197,10 +194,45 @@ export default {
       else{
         url = `https://i.ytimg.com/vi/${movie.url}/mqdefault.jpg`
       }
+
+      const climbers = movie.climber.map(el => el.name)
+      let meta_climbers = ""
+      if(climbers.length <= 3){
+        meta_climbers = climbers.join(', ')
+      }
+      else{
+        meta_climbers = climbers.slice(0, 3).join(', ') + ' and more'
+      }
+
+      const editors = movie.editor.map(el => el.name)
+      let meta_editors = ""
+      if(editors.length <= 1){
+        meta_editors = editors.join('')
+      }
+      else{
+        meta_editors = editors[0]
+      }
+
+      const problems = movie.problem.map(el => el.name)
+      let meta_problems = ""
+      if(problems.length <= 1){
+        meta_problems = problems.join('')
+      }
+      else if(problems.length === 2){
+        meta_problems = problems.slice(0, 2).join(', ')
+      }
+      else{
+        meta_problems = problems.slice(0, 2).join(', ') + ' and many other problems'
+      }
+
+      const metaInfo = `${meta_climbers} climbing ${meta_problems} in ${movie.area.name}, ${movie.country.name}. Created by ${meta_editors} in ${movie.year}.`
+      console.log(metaInfo)
+
       return {
         movie: movie,
         relatedMovies: relatedMovies.contents,
-        url: url
+        url: url,
+        metaInfo: metaInfo
       }
     } catch (err) {
       error({
@@ -210,12 +242,12 @@ export default {
   },
   head() {
     return {
-      title: this.movie.title,
+      title: `${this.movie.title} | OnTheRock`,
       meta: [
-        { hid: 'description', name: 'description', content: this.meta.description },
+        { hid: 'description', name: 'description', content: this.metaInfo },
         { hid: 'og:type', property: 'og:type', content: this.meta.type },
-        { hid: 'og:title', property: 'og:title', content: this.movie.title },
-        { hid: 'og:description', property: 'og:description', content: this.meta.description },
+        { hid: 'og:title', property: 'og:title', content: `${this.movie.title} | OnTheRock` },
+        { hid: 'og:description', property: 'og:description', content: this.metaInfo },
         { hid: 'og:url', property: 'og:url', content: `${this.meta.url}movie/${this.movie.id}/` },
         { hid: 'og:image', property: 'og:image', content: this.url },
       ],

@@ -30,7 +30,6 @@ export default {
     },
     isVimeo: {
       type: Boolean,
-      required: true,
     },
     vimeoImage:{
       type: String
